@@ -65,35 +65,35 @@ _**Fansbooke** will have_
 
 #### Landing Page
 
-<img src="assets/landing.png" width="500"/>
+<img src="assets/landing.png" width="400"/>
 
 #### Log In Page
 
-<img src="assets/login.png" width="500"/>
+<img src="assets/login.png" width="400"/>
 
 #### Create Account Page
 
-<img src="assets/create-account.png" width="500"/>
+<img src="assets/create-account.png" width="400"/>
 
 #### Homepage
 
-<img src="assets/homepage.png" width="500"/>
+<img src="assets/homepage.png" width="400"/>
 
 #### Search Page
 
-<img src="assets/search.png" width="500"/>
+<img src="assets/search.png" width="400"/>
 
 #### Create Post Page
 
-<img src="assets/create-post.png" width="500"/>
+<img src="assets/create-post.png" width="400"/>
 
 #### Homepage 2
 
-<img src="assets/homepage2.png" width="500"/>
+<img src="assets/homepage2.png" width="400"/>
 
 #### Profile Page
 
-<img src="assets/profile.png" width="500"/>
+<img src="assets/profile.png" width="400"/>
 
 #### Component Hierarchy
 
