@@ -144,7 +144,7 @@ src
 | CSS       |    H     |     20 hrs     |      TBH      |     TBH     |
 | Front End |    VH    |     30 hrs     |      TBH      |     TBH     |
 | Back End  |    H     |     15 hrs     |      TBH      |     TBD     |
-| TOTAL     |          |     6 hrs      |      TBH      |     TBD     |
+| TOTAL     |          |     60 hrs     |      TBH      |     TBD     |
 
 <br>
 
