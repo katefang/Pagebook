@@ -61,7 +61,7 @@ _**Fansbooke** will have_
 
 #### Overview
 
-![](assets/Fanspage.png)
+![](assets/Fansbook.png)
 
 #### Landing Page
 
