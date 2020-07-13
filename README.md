@@ -73,7 +73,7 @@ _**Fansbooke** will have_
 
 #### Create Account Page
 
-<img src="assets/account-page.png" width="500"/>
+<img src="assets/create-account.png" width="500"/>
 
 #### Homepage
 
@@ -81,7 +81,7 @@ _**Fansbooke** will have_
 
 #### Search Page
 
-<img src="assets/search-page.png" width="500"/>
+<img src="assets/search.png" width="500"/>
 
 #### Create Post Page
 
@@ -93,7 +93,7 @@ _**Fansbooke** will have_
 
 #### Profile Page
 
-<img src="assets/profile-page.png" width="500"/>
+<img src="assets/profile.png" width="500"/>
 
 #### Component Hierarchy
 
