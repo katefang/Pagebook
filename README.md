@@ -67,25 +67,37 @@ _**Fansbooke** will have_
 
 <img src="assets/landing.png" width="400"/>
 
+<hr/>
+
 #### Log In Page
 
 <img src="assets/login.png" width="400"/>
+
+<hr/>
 
 #### Create Account Page
 
 <img src="assets/create-account.png" width="400"/>
 
+<hr/>
+
 #### Homepage
 
 <img src="assets/homepage.png" width="400"/>
+
+<hr/>
 
 #### Search Page
 
 <img src="assets/search.png" width="400"/>
 
+<hr/>
+
 #### Create Post Page
 
 <img src="assets/create-post.png" width="400"/>
+
+<hr/>
 
 #### Homepage 2
 
