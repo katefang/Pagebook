@@ -37,7 +37,7 @@ _**Fansbooke** will have_
 ### Goals
 
 - Users will be able to CRUD posts
-- User will be able to like and comment on friends' posts
+- User will be able to like and comment on everyone's posts
 
 <br>
 
@@ -102,11 +102,12 @@ _**Fansbooke** will have_
 src
 |__ images
 |__ components/
-      |__ chat-list.component.jsx
-      |__ settings.component.jsx
-      |__ edit-profile.component.jsx
-      |__ add-partcipants.component.jsx
-      |__ chat-screen.component
+      |__ landing-page.jsx
+      |__ login-page.jsx
+      |__ create-account-page.jsx
+      |__ homepage.jsx
+      |__ profile-page.jsx
+      |__ header.jsx
 |__ services/
     |__ apiHelper.js
     |__ user.js
@@ -116,13 +117,13 @@ src
 
 #### Component Breakdown
 
-|    Component     |    Type    | state | props | Description                                    |
-| :--------------: | :--------: | :---: | :---: | :--------------------------------------------- |
-|    chat-list     | functional |   y   |   y   | _list of chats_                                |
-|     settings     | functional |   y   |   y   | _User can update user settings_                |
-|   edit-profile   | functional |   y   |   y   | _User can edit user profile_                   |
-| add-participants | functional |   y   |   y   | _User can add friends_                         |
-|   chat-screen    | functional |   y   |   y   | _User can chat here and see past chat history_ |
+|   Component    |    Type    | state | props | Description                             |
+| :------------: | :--------: | :---: | :---: | :-------------------------------------- |
+|     header     | functional |   y   |   y   | _header for some pages_                 |
+|  landing-page  | functional |   y   |   y   | _landing page aka getting started page_ |
+|   login-page   | functional |   y   |   y   | _user login page_                       |
+| create-account | functional |   y   |   y   | _new user create account page_          |
+|    homepage    | functional |   y   |   y   | _homepage with friend's posts_          |
 
 #### Time Estimates
 
@@ -139,7 +140,7 @@ src
 
 #### ERD Model
 
-> Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
+![](assets/ERD.png)
 
 <br>
 
@@ -147,7 +148,7 @@ src
 
 ## Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+- have friends
 
 ---
 
