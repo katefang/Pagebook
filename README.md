@@ -69,7 +69,7 @@ _**Fansbooke** will have_
 
 #### Log In Page
 
-<img src="assets/login" width="500"/>
+<img src="assets/login.png" width="500"/>
 
 #### Create Account Page
 
