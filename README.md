@@ -152,7 +152,7 @@ src
 
 #### ERD Model
 
-![](assets/ERD.png)
+![](assets/fansbook-ERD.png)
 
 <br>
 

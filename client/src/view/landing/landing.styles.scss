@@ -1,0 +1,36 @@
+@import '../../variables.scss';
+
+.landing-view {
+  margin: 50px 20px 0 20px;
+  text-align: center;
+  line-height: 3rem;
+  @include flex(column, center, space-around);
+  flex: auto;
+  h2 {
+    color: $pc;
+    font-weight: 500;
+  }
+  p {
+    text-align: center;
+    line-height: 1.5rem;
+  }
+  button {
+    width: 100%;
+    height: 2.5rem;
+    background-color: $pc;
+    color: #fff;
+    border-style: none;
+    border-radius: 5px;
+  }
+  .footer {
+    margin-top: auto;
+    hr {
+      color: #ddd;
+      opacity: 0.3;
+    }
+    a {
+      text-decoration: none;
+      color: #444;
+    }
+  }
+}

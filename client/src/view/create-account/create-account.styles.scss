@@ -1,0 +1,29 @@
+@import '../../variables.scss';
+
+.create-account-view {
+  margin: auto 20px;
+  text-align: center;
+  line-height: 3rem;
+  @include flex(column, center, space-around);
+
+  .question {
+    color: $pc;
+    font-weight: 600;
+  }
+  .name {
+    @include flex(column, center, space-around);
+  }
+  .gender {
+    @include flex(column, center, space-around);
+    label {
+      @include flex(row, center, center);
+    }
+  }
+  input {
+    @include input;
+  }
+  button {
+    margin-top: 2rem;
+    @include button($pc, #fff);
+  }
+}
