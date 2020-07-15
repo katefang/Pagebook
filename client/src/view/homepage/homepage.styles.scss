@@ -1,0 +1,7 @@
+@import '../../variables.scss';
+
+.homepage {
+  .content {
+    @include ssm;
+  }
+}

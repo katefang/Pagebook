@@ -1,17 +1,22 @@
 @import '../../variables.scss';
 
-.header {
+.main-header {
   display: flex;
-  justify-content: space-between;
-  padding: 0 10px;
-  h2 {
+  @include flex(row, space-between, center);
+  @include ssm;
+  a {
+    text-decoration: none;
     color: $pc;
   }
-  .search {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background-color: #ddd;
-    @include flex(row, center, center);
+  .icons {
+    @include flex(row, space-evenly, center);
+    .search,
+    .person {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background-color: #ddd;
+      @include flex(row, center, center);
+    }
   }
 }

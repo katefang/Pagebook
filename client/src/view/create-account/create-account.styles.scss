@@ -1,29 +1,45 @@
 @import '../../variables.scss';
 
 .create-account-view {
-  margin: auto 20px;
-  text-align: center;
-  line-height: 3rem;
-  @include flex(column, center, space-around);
+  height: 100vh;
+  @include flex(column, space-between, stretch);
+  margin: 0;
+  .content {
+    @include ssm;
+    text-align: center;
+    line-height: 2.5rem;
+    @include flex(column, center, space-around);
 
-  .question {
-    color: $pc;
-    font-weight: 600;
-  }
-  .name {
-    @include flex(column, center, space-around);
-  }
-  .gender {
-    @include flex(column, center, space-around);
-    label {
-      @include flex(row, center, center);
+    .question {
+      font-size: 1.2rem;
+      color: $pc;
+      font-weight: 600;
+      margin-top: 1rem;
     }
-  }
-  input {
-    @include input;
-  }
-  button {
-    margin-top: 2rem;
-    @include button($pc, #fff);
+    .name {
+      @include flex(column, center, stretch);
+    }
+    .gender {
+      @include flex(column, center, center);
+      label {
+        width: 30%;
+        @include flex(row, space-evenly, center);
+        input {
+          width: 15%;
+        }
+      }
+    }
+    input {
+      @include input;
+      width: 98%;
+    }
+    button {
+      margin: 2rem 0 1rem 0;
+      @include button($pc, #fff);
+    }
+
+    .footer {
+      @include footer;
+    }
   }
 }

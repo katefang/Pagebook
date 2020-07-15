@@ -4,6 +4,7 @@
   @include flex(column, center, space-between);
   height: 100vh;
   .header {
+    margin: 0;
     height: 20vh;
     width: 100%;
     background-image: url(../../images/bg1.jpg);
@@ -30,9 +31,7 @@
     .footer {
       margin-top: auto;
       width: 100%;
-      hr {
-        transform: rotate(90deg);
-      }
+
       .divider {
         @include flex(row, center, center);
       }
