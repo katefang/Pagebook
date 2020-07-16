@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import './avatar.styles.scss';
-import { UserContext } from '../../context/user-context';
+import { AdminContext } from '../../context/admin-context';
 
 const Avatar = () => {
-  const { user } = useContext(UserContext);
+  const { admin } = useContext(AdminContext);
   return (
     <div className='avatar'>
-      {user &&
-        user.first_name.charAt(0).toUpperCase() +
-          user.last_name.charAt(0).toUpperCase()}
+      {admin &&
+        admin.first_name.charAt(0).toUpperCase() +
+          admin.last_name.charAt(0).toUpperCase()}
     </div>
   );
 };

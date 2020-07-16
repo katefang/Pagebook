@@ -1,14 +1,13 @@
 import React, { useContext, useState } from 'react';
 import './create-post.styles.scss';
 import Header from '../../components/header/header.component';
-import { UserContext } from '../../context/user-context';
-import { PostContext } from '../../context/post-context';
+import { AdminContext } from '../../context/admin-context';
 import Avatar from '../../components/avatar/avatar.component';
 import { createPost } from '../../services/posts';
 
 const CreatePost = () => {
-  const { user } = useContext(UserContext);
-  const { setPost } = useContext(PostContext);
+  const { admin } = useContext(AdminContext);
+
   const [input, setInput] = useState();
 
   const handleChange = e => {
@@ -19,7 +18,7 @@ const CreatePost = () => {
   const handlePostSubmit = async () => {
     try {
       const response = await createPost({
-        user_id: user.id,
+        user_id: admin.id,
         post_text: input
       });
       console.log(response);

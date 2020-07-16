@@ -2,10 +2,10 @@ import React, { useState, useContext } from 'react';
 import './login.styles.scss';
 import { Link, useHistory } from 'react-router-dom';
 import { loginUser } from '../../services/auth';
-import { UserContext } from '../../context/user-context';
+import { AdminContext } from '../../context/admin-context';
 
 const LoginView = () => {
-  const { setUser } = useContext(UserContext);
+  const { setAdmin } = useContext(AdminContext);
   const { push } = useHistory();
   const [input, setInput] = useState({
     email: '',
@@ -23,7 +23,7 @@ const LoginView = () => {
     try {
       const response = await loginUser(input);
       console.log(response);
-      setUser(response);
+      setAdmin(response);
       push('/home');
     } catch (error) {
       console.log(error);

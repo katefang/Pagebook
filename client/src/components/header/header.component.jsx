@@ -3,11 +3,10 @@ import './header.styles.scss';
 import { Search, PersonFill } from 'react-bootstrap-icons';
 import { Link, useHistory } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
-import { UserContext } from '../../context/user-context';
-import { loginUser } from '../../services/auth';
+import { AdminContext } from '../../context/admin-context';
 
 const Header = () => {
-  const { user, setUser } = useContext(UserContext);
+  const { admin, setAdmin } = useContext(AdminContext);
   const { push } = useHistory();
 
   const [modalShow, setModalShow] = useState(false);
@@ -17,7 +16,7 @@ const Header = () => {
 
   const handleLogin = () => push('/login');
 
-  const handleLogout = () => setUser(null);
+  const handleLogout = () => setAdmin(null);
 
   return (
     <div className='main-header'>
@@ -33,7 +32,7 @@ const Header = () => {
         </div>
       </div>
       <Modal size='sm' show={modalShow} onHide={handleModalClose}>
-        {user ? (
+        {admin ? (
           <Modal.Body onClick={handleLogout}>logout</Modal.Body>
         ) : (
           <Modal.Body onClick={handleLogin}>login</Modal.Body>
