@@ -2,6 +2,17 @@
 
 .homepage {
   .content {
-    @include ssm;
+    @include width-phone;
+    margin: 0 auto;
+
+    .display-post {
+      margin-top: 1rem;
+      .post-text {
+        margin-top: 1.5rem;
+      }
+      .post-footer {
+        @include flex(row, space-between, center);
+      }
+    }
   }
 }

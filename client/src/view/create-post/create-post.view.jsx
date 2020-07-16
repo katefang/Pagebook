@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import './create-post.styles.scss';
 import Header from '../../components/header/header.component';
 import { AdminContext } from '../../context/admin-context';
-import Avatar from '../../components/avatar/avatar.component';
 import { createPost } from '../../services/posts';
 
 const CreatePost = () => {
@@ -32,7 +31,11 @@ const CreatePost = () => {
       <Header />
       <div className='content'>
         <p>Create Post</p>
-        <Avatar />
+        <div className='avatar'>
+          {admin &&
+            admin.first_name.charAt(0).toUpperCase() +
+              admin.last_name.charAt(0).toUpperCase()}
+        </div>
         <textarea
           placeholder="What's on your mind?"
           value={input}

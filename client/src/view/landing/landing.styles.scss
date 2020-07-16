@@ -5,8 +5,8 @@
   height: 100vh;
   text-align: center;
   .content {
-    @include ssm;
-    margin-top: 5rem;
+    @include width-phone;
+    margin: 5rem auto 0;
     line-height: 3rem;
     @include flex(column, space-between, stretch);
     flex: auto;

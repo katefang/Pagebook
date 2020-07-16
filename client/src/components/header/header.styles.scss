@@ -3,7 +3,6 @@
 .main-header {
   display: flex;
   @include flex(row, space-between, center);
-  @include ssm;
   margin: 1rem;
   a {
     text-decoration: none;

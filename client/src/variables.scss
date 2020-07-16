@@ -1,4 +1,6 @@
 $pc: #1877f2;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
 
 @mixin flex($fd, $jc, $ai) {
   display: flex;
@@ -46,18 +48,14 @@ $pc: #1877f2;
   @include flex(row, center, center);
 }
 
-@mixin ssm {
-  margin: 0 1rem;
+@mixin width-phone {
+  width: 90%;
 }
 
-@mixin msm {
-  margin: 0 2rem;
+@mixin width-tablet {
+  width: 80%;
 }
 
-@mixin lsm {
-  margin: 4rem;
-}
-
-@mixin xlsm {
-  margin: 4rem;
+@mixin width-desktop {
+  width: 60%;
 }

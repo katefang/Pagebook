@@ -1,17 +1,18 @@
 @import '../../variables.scss';
 
-.make-post {
+.feed-header {
+  margin-left: 0;
   .content {
-    margin: 0;
+    margin-left: 0;
     @include flex(row, flex-start, center);
     .avatar {
       @include circle(3rem);
     }
-    a {
-      text-decoration: none;
+    .author-and-time {
       margin-left: 1rem;
-      margin-bottom: 0;
-      color: #555;
+      .time {
+        color: #888;
+      }
     }
   }
 }

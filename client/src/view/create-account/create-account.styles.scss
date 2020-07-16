@@ -5,7 +5,8 @@
   @include flex(column, space-between, stretch);
   margin: 0;
   .content {
-    @include ssm;
+    @include width-phone;
+    margin: 0 auto;
     text-align: center;
     line-height: 2.5rem;
     @include flex(column, center, space-around);
