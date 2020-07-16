@@ -16,12 +16,12 @@
     margin: 3rem auto 0;
     flex: auto;
     form {
+      width: 100%;
       input {
         @include input;
-        width: 98%;
+        width: 100%;
       }
       .email {
-        border-bottom: none;
       }
       button {
         margin-top: 1.5rem;

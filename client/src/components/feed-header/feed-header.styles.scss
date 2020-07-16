@@ -1,17 +1,20 @@
 @import '../../variables.scss';
 
 .feed-header {
-  margin-left: 0;
+  margin: 0;
   .content {
-    margin-left: 0;
-    @include flex(row, flex-start, center);
-    .avatar {
-      @include circle(3rem);
-    }
-    .author-and-time {
-      margin-left: 1rem;
-      .time {
-        color: #888;
+    margin: 0;
+    @include flex(row, space-between, start);
+    .left {
+      @include flex(row, flex-start, center);
+      .avatar {
+        @include circle(3rem);
+      }
+      .author-and-time {
+        margin-left: 1rem;
+        .time {
+          color: #888;
+        }
       }
     }
   }

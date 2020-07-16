@@ -16,7 +16,13 @@ const Header = () => {
 
   const handleLogin = () => push('/login');
 
-  const handleLogout = () => setAdmin(null);
+  const handleLogout = () => {
+    setAdmin(null);
+    localStorage.clear();
+    push('/login');
+  };
+
+  const handleProfileOpen = () => push('profile');
 
   return (
     <div className='main-header'>
@@ -33,9 +39,14 @@ const Header = () => {
       </div>
       <Modal size='sm' show={modalShow} onHide={handleModalClose}>
         {admin ? (
-          <Modal.Body onClick={handleLogout}>logout</Modal.Body>
+          <Modal.Body>
+            <p onClick={handleLogout}>logout</p>
+            <p onClick={handleProfileOpen}>Profile</p>
+          </Modal.Body>
         ) : (
-          <Modal.Body onClick={handleLogin}>login</Modal.Body>
+          <Modal.Body>
+            <p onClick={handleLogin}>login</p>
+          </Modal.Body>
         )}
       </Modal>
     </div>

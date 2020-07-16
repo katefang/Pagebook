@@ -29,17 +29,21 @@ const FeedHeader = ({ id, time }) => {
     <div className='feed-header'>
       {user && (
         <div className='content'>
-          <div className='avatar'>
-            {user.first_name.charAt(0).toUpperCase() +
-              user.last_name.charAt(0).toUpperCase()}
-          </div>
-          <div className='author-and-time'>
-            <div className='author'>
-              {user.first_name + ' ' + user.last_name}
+          <div className='left'>
+            <div className='avatar'>
+              {user.first_name.charAt(0).toUpperCase() +
+                user.last_name.charAt(0).toUpperCase()}
             </div>
-            <div className='time'>{date}</div>
+            <div className='author-and-time'>
+              <div className='author'>
+                {user.first_name + ' ' + user.last_name}
+              </div>
+              <div className='time'>{date}</div>
+            </div>
           </div>
-          <ThreeDots />
+          <div className='right'>
+            <ThreeDots />
+          </div>
         </div>
       )}
     </div>
