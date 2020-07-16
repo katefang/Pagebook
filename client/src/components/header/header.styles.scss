@@ -4,6 +4,7 @@
   display: flex;
   @include flex(row, space-between, center);
   @include ssm;
+  margin: 1rem;
   a {
     text-decoration: none;
     color: $pc;
@@ -12,11 +13,7 @@
     @include flex(row, space-evenly, center);
     .search,
     .person {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-      background-color: #ddd;
-      @include flex(row, center, center);
+      @include circle(2rem);
     }
   }
 }

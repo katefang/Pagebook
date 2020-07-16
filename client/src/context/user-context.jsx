@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { loginUser } from '../services/auth';
+import { loginUser, verifyUser } from '../services/auth';
 
 export const UserContext = createContext({
   user: {},
@@ -8,14 +8,15 @@ export const UserContext = createContext({
 
 const UserContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const token = JSON.parse(localStorage.getItem('jwt-token'));
-  if (token && !user) {
-    const signin = async () => {
-      const signedInUser = await loginUser(null, token);
-      console.log(signedInUser);
-      setUser(signedInUser);
-    };
-    signin();
+
+  const verify = async () => {
+    const response = await verifyUser();
+    setUser(response);
+    console.log(response);
+  };
+
+  if (!user) {
+    verify();
   }
 
   return (

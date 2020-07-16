@@ -38,6 +38,14 @@ $pc: #1877f2;
   }
 }
 
+@mixin circle($length) {
+  width: $length;
+  height: $length;
+  border-radius: 50%;
+  background-color: #ddd;
+  @include flex(row, center, center);
+}
+
 @mixin ssm {
   margin: 0 1rem;
 }

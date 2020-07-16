@@ -1,1 +1,16 @@
 @import '../../variables.scss';
+
+.make-post {
+  .content {
+    @include flex(row, start, center);
+    .avatar {
+      @include circle(3rem);
+    }
+    a {
+      text-decoration: none;
+      margin-left: 1rem;
+      margin-bottom: 0;
+      color: #555;
+    }
+  }
+}

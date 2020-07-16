@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './create-account.styles.scss';
 import Header from '../../components/header/header.component';
 import { Link, useHistory } from 'react-router-dom';
 import { registerUser } from '../../services/auth';
+import { UserContext } from '../../context/user-context';
 
 const CreateAccountView = () => {
+  const { setUser } = useContext(UserContext);
   const { push } = useHistory();
   const [input, setInput] = useState({
     first_name: '',
@@ -26,7 +28,7 @@ const CreateAccountView = () => {
     try {
       const response = await registerUser(input);
       console.log(response);
-      setUser(reponse);
+      setUser(response);
       push('/home');
     } catch (error) {
       console.log(error);
