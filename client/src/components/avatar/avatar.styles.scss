@@ -1,0 +1,5 @@
+@import '../../variables.scss';
+
+.avatar {
+  @include circle(3rem);
+}

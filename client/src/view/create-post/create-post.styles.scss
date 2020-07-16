@@ -1,1 +1,25 @@
 @import '../../variables.scss';
+
+.create-post {
+  .content {
+    @include ssm;
+    @include flex(column, space-around, stretch);
+    p {
+      text-align: center;
+    }
+    textarea {
+      border: none;
+      width: 100%;
+      height: 6rem;
+      resize: none;
+      outline: none;
+      margin: 0.5rem;
+      &::placeholder {
+        color: #ddd;
+      }
+    }
+    button {
+      @include button($pc, #fff);
+    }
+  }
+}

@@ -6,21 +6,21 @@ export const getComments = async () => {
 };
 
 export const getComment = async id => {
-  const resp = await api.get(`/comments/${id}`);
+  const resp = await api.get(`/comment/${id}`);
   return resp.data;
 };
 
 export const createComment = async commentData => {
-  const resp = await api.post('/comments', { comments: commentData });
+  const resp = await api.post('/comments', { comment: commentData });
   return resp.data;
 };
 
 export const putComment = async (id, commentData) => {
-  const resp = await api.put(`/comments/${id}`, { comment: commentData });
+  const resp = await api.put(`/comment/${id}`, { comment: commentData });
   return resp.data;
 };
 
-export const deleteFood = async id => {
-  const resp = await api.delete(`/comments/${id}`);
+export const deleteComment = async id => {
+  const resp = await api.delete(`/comment/${id}`);
   return resp;
 };

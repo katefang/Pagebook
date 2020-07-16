@@ -5,12 +5,15 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import UserContextProvider from './context/user-context';
+import PostContextProvider from './context/post-context';
 
 ReactDOM.render(
   <UserContextProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <PostContextProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </PostContextProvider>
   </UserContextProvider>,
   document.getElementById('root')
 );

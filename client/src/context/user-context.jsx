@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { loginUser, verifyUser } from '../services/auth';
+import { verifyUser } from '../services/auth';
 
 export const UserContext = createContext({
   user: {},
