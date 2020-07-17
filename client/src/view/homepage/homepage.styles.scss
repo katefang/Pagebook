@@ -7,12 +7,6 @@
 
     .display-post {
       margin-top: 1rem;
-      .post-text {
-        margin-top: 1.5rem;
-      }
-      .post-footer {
-        @include flex(row, space-between, center);
-      }
     }
   }
 }

@@ -7,6 +7,7 @@ import LoginView from './view/login/login.view';
 import ProfileView from './view/profile/profile.view';
 import Homepage from './view/homepage/homepage.view';
 import CreatePost from './view/create-post/create-post.view';
+import UpdatePostView from './view/update-post/update-post.view';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/home' render={() => <Homepage />} />
         <Route path='/create-post' render={() => <CreatePost />} />
         <Route path='/profile' render={() => <ProfileView />} />
+        <Route path='/update-post' render={() => <UpdatePostView />} />
       </Switch>
     </div>
   );

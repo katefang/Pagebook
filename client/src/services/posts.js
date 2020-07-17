@@ -20,7 +20,7 @@ export const putPost = async (id, postData) => {
   return resp.data;
 };
 
-export const deleteFood = async id => {
+export const deletePost = async id => {
   const resp = await api.delete(`/posts/${id}`);
   return resp;
 };

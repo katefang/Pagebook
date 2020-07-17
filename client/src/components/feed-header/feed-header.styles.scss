@@ -1,8 +1,8 @@
 @import '../../variables.scss';
 
 .feed-header {
-  margin: 0;
-  .content {
+  margin: 2rem auto 1rem;
+  .fh-content {
     margin: 0;
     @include flex(row, space-between, start);
     .left {
@@ -10,6 +10,7 @@
       .avatar {
         @include circle(3rem);
       }
+
       .author-and-time {
         margin-left: 1rem;
         .time {
@@ -17,5 +18,11 @@
         }
       }
     }
+  }
+}
+
+.modal .modal-dialog {
+  .icon {
+    margin: 0 2rem;
   }
 }

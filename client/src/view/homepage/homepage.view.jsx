@@ -3,14 +3,12 @@ import './homepage.styles.scss';
 import Header from '../../components/header/header.component';
 import MakePost from '../../components/make-post/make-post.component';
 import { getPosts } from '../../services/posts';
-import { getUsers } from '../../services/users';
 import FeedHeader from '../../components/feed-header/feed-header.component';
-import { UsersContext } from '../../context/users-context';
-import { HeartFill, ChatSquareFill } from 'react-bootstrap-icons';
+import Feed from '../../components/feed/feed.component';
+import { PostsContext } from '../../context/posts-context';
 
 const Homepage = () => {
-  const [posts, setPosts] = useState();
-  const { users, setUsers } = useContext(UsersContext);
+  const { posts, setPosts } = useContext(PostsContext);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -18,13 +16,8 @@ const Homepage = () => {
       console.log(response);
       setPosts(response);
     };
-    const fetchUsers = async () => {
-      const response = await getUsers();
-      console.log(response);
-      setUsers(response);
-    };
+
     fetchPosts();
-    fetchUsers();
   }, []);
 
   return (
@@ -35,18 +28,12 @@ const Homepage = () => {
         {posts &&
           posts.map(post => (
             <div key={post.id} className='display-post'>
-              <FeedHeader id={post.user_id} time={post.created_at} />
-              <div className='post-text'>{post.post_text}</div>
-              <hr />
-              <div className='post-footer'>
-                <div className='up'>
-                  <HeartFill /> Like
-                </div>
-                <div className='comment'>
-                  <ChatSquareFill /> Comment
-                </div>
-              </div>
-              <hr />
+              <FeedHeader
+                id={post.user_id}
+                time={post.created_at}
+                post={post}
+              />
+              <Feed post={post} />
             </div>
           ))}
       </div>

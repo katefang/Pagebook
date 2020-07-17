@@ -10,4 +10,21 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+  .bio {
+    .profile-avatar {
+      @include circle(5rem);
+      position: absolute;
+      top: 8rem;
+      right: 40vw;
+    }
+    p {
+      text-align: center;
+      margin-top: 4rem;
+    }
+  }
+
+  .content {
+    @include width-phone;
+    margin: 1rem auto 0;
+  }
 }

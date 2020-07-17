@@ -1,6 +1,6 @@
 @import '../../variables.scss';
 
-.create-post {
+.update-post {
   .content {
     @include width-phone;
     margin: 0 auto;
@@ -14,8 +14,11 @@
     textarea {
       @include textarea;
     }
-    button {
-      @include button($pc, #fff);
+    .buttons {
+      @include flex(row, space-evenly, center);
+      button {
+        @include button($pc, #fff);
+      }
     }
   }
 }

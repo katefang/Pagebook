@@ -6,17 +6,14 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import AdminContextProvider from './context/admin-context';
 import PostsContextProvider from './context/posts-context';
-import UsersContextProvider from './context/users-context';
 
 ReactDOM.render(
   <AdminContextProvider>
-    <UsersContextProvider>
-      <PostsContextProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </PostsContextProvider>
-    </UsersContextProvider>
+    <PostsContextProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </PostsContextProvider>
   </AdminContextProvider>,
   document.getElementById('root')
 );

@@ -1,18 +1,41 @@
 import React, { useState, useContext, useEffect } from 'react';
 import './feed-header.styles.scss';
-import { getUser } from '../../services/users';
-import { ThreeDots } from 'react-bootstrap-icons';
+import { getUsers } from '../../services/users';
+import { deletePost } from '../../services/posts';
+import { ThreeDots, EyeFill, TrashFill, Pencil } from 'react-bootstrap-icons';
+import Modal from 'react-bootstrap/esm/Modal';
+import { useHistory } from 'react-router-dom';
 
-const FeedHeader = ({ id, time }) => {
-  const [user, setUser] = useState(null);
+const FeedHeader = ({ id, time, post }) => {
+  const [users, setUsers] = useState(null);
+  const { push } = useHistory();
+  const [modalShow, setModalShow] = useState(false);
+  let user;
 
   useEffect(() => {
-    const findUser = async () => {
-      const response = await getUser(id);
-      setUser(response);
+    const findUsers = async () => {
+      const response = await getUsers();
+      setUsers(response);
     };
-    findUser();
+    findUsers();
   }, []);
+
+  if (users) {
+    user = users.find(person => person.id === id);
+  }
+
+  const handleModalClose = () => setModalShow(false);
+
+  const handleModalShow = () => setModalShow(true);
+
+  const handleEditPost = () => push('/update-post');
+
+  const handleDeletePost = async () => {
+    const response = await deletePost(post.id);
+    console.log(response);
+  };
+
+  const handleViewPost = () => push('/profile');
 
   const timeString = new Date(time);
   const options = {
@@ -28,7 +51,7 @@ const FeedHeader = ({ id, time }) => {
   return (
     <div className='feed-header'>
       {user && (
-        <div className='content'>
+        <div className='fh-content'>
           <div className='left'>
             <div className='avatar'>
               {user.first_name.charAt(0).toUpperCase() +
@@ -42,7 +65,27 @@ const FeedHeader = ({ id, time }) => {
             </div>
           </div>
           <div className='right'>
-            <ThreeDots />
+            <ThreeDots onClick={handleModalShow} />
+            <Modal
+              centered
+              size='sm'
+              show={modalShow}
+              onHide={handleModalClose}
+            >
+              <Modal.Body>
+                <p onClick={handleEditPost} post={post}>
+                  <Pencil className='icon' /> <span> Edit</span>
+                </p>
+                <hr />
+                <p onClick={handleDeletePost}>
+                  <TrashFill className='icon' /> <span> Delete</span>
+                </p>
+                <hr />
+                <p onClick={handleViewPost}>
+                  <EyeFill className='icon' /> <span> View</span>
+                </p>
+              </Modal.Body>
+            </Modal>
           </div>
         </div>
       )}
