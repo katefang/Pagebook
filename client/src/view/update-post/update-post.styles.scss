@@ -16,8 +16,11 @@
     }
     .buttons {
       @include flex(row, space-evenly, center);
+      width: 100%;
+      a,
       button {
         @include button($pc, #fff);
+        width: 40%;
       }
     }
   }

@@ -19,7 +19,7 @@ function App() {
         <Route path='/home' render={() => <Homepage />} />
         <Route path='/create-post' render={() => <CreatePost />} />
         <Route path='/profile' render={() => <ProfileView />} />
-        <Route path='/update-post' render={() => <UpdatePostView />} />
+        <Route path='/update-post/:id' render={() => <UpdatePostView />} />
       </Switch>
     </div>
   );

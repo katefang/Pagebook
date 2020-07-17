@@ -87,6 +87,16 @@ const CreateAccountView = () => {
             />
             male
           </label>
+          <label>
+            <input
+              type='radio'
+              name='gender'
+              value='idk'
+              checked={gender === 'idk'}
+              onChange={handleChange}
+            />
+            idk
+          </label>{' '}
         </div>
         <div className='question'>What's Your Email Address?</div>
         <label>

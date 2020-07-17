@@ -1,7 +1,7 @@
 @import '../../variables.scss';
 
 .make-post {
-  .content {
+  .mp-content {
     margin: 0;
     @include flex(row, flex-start, center);
     .avatar {

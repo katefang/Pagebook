@@ -28,14 +28,11 @@ const FeedHeader = ({ id, time, post }) => {
 
   const handleModalShow = () => setModalShow(true);
 
-  const handleEditPost = () => push('/update-post');
-
   const handleDeletePost = async () => {
-    const response = await deletePost(post.id);
-    console.log(response);
+    await deletePost(post.id);
+    handleModalClose();
+    window.location.reload();
   };
-
-  const handleViewPost = () => push('/profile');
 
   const timeString = new Date(time);
   const options = {
@@ -73,7 +70,7 @@ const FeedHeader = ({ id, time, post }) => {
               onHide={handleModalClose}
             >
               <Modal.Body>
-                <p onClick={handleEditPost} post={post}>
+                <p onClick={() => push(`/update-post/${post.id}`)}>
                   <Pencil className='icon' /> <span> Edit</span>
                 </p>
                 <hr />
@@ -81,7 +78,7 @@ const FeedHeader = ({ id, time, post }) => {
                   <TrashFill className='icon' /> <span> Delete</span>
                 </p>
                 <hr />
-                <p onClick={handleViewPost}>
+                <p>
                   <EyeFill className='icon' /> <span> View</span>
                 </p>
               </Modal.Body>

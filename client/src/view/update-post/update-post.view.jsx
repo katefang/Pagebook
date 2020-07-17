@@ -1,23 +1,33 @@
 import React, { useContext, useState, useEffect } from 'react';
 import './update-post.styles.scss';
 import { AdminContext } from '../../context/admin-context';
-import { PostsContext } from '../../context/posts-context';
 import { getPost, putPost } from '../../services/posts';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import Header from '../../components/header/header.component';
 
-const UpdatePostView = ({ post }) => {
+const UpdatePostView = () => {
   const { admin } = useContext(AdminContext);
-  const [input, setInput] = useState(post);
+  const [input, setInput] = useState('');
+  const { push } = useHistory();
+  const { id } = useParams();
 
   const handleChange = e => {
     const { value } = e.target;
     setInput(value);
   };
 
+  useEffect(() => {
+    const fetchPost = async () => {
+      const response = await getPost(+id);
+      console.log(response);
+      setInput(response.post_text);
+    };
+    fetchPost();
+  }, []);
+
   const handleUpdateClick = async () => {
-    const response = await putPost(admin.id, input);
-    console.log(response);
+    await putPost(+id, { post_text: input });
+    push('/profile');
   };
 
   return (
@@ -30,15 +40,15 @@ const UpdatePostView = ({ post }) => {
             admin.first_name.charAt(0).toUpperCase() +
               admin.last_name.charAt(0).toUpperCase()}
         </div>
+
         <textarea
-          placeholder="What's on your mind?"
+          placeholder='update post'
           value={input}
           onChange={handleChange}
         />
+
         <div className='buttons'>
-          <Link to='/home'>
-            <button>Cancel</button>
-          </Link>
+          <button onClick={() => push('/home')}>Cancel</button>
           <button onClick={handleUpdateClick}>Update</button>
         </div>
       </div>

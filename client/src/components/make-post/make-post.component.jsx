@@ -8,7 +8,7 @@ const MakePost = () => {
 
   return (
     <div className='make-post'>
-      <div className='content'>
+      <div className='mp-content'>
         <div className='avatar'>
           {admin &&
             admin.first_name.charAt(0).toUpperCase() +
