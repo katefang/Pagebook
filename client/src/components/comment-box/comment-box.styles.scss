@@ -1,0 +1,21 @@
+@import '../../variables.scss';
+
+.comment-box {
+  @include flex(row, space-between, center);
+  .comment-box-avatar {
+    @include circle(3rem);
+  }
+  input {
+    background-color: $sc;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 1rem;
+    outline: none;
+    width: 15rem;
+  }
+  .send-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: #666;
+  }
+}

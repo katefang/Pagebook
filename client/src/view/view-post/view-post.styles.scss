@@ -4,6 +4,10 @@
   .content {
     @include width-phone;
     margin: 0 auto;
+    .post {
+      @include box-shadow;
+      padding: 0.5rem 1rem;
+    }
     .comment {
       textarea {
         @include textarea;

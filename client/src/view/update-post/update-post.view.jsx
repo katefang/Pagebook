@@ -46,11 +46,10 @@ const UpdatePostView = () => {
           value={input}
           onChange={handleChange}
         />
-
-        <div className='buttons'>
-          <button onClick={() => push('/home')}>Cancel</button>
-          <button onClick={handleUpdateClick}>Update</button>
-        </div>
+      </div>
+      <div className='buttons'>
+        <button onClick={() => push('/home')}>Cancel</button>
+        <button onClick={handleUpdateClick}>Update</button>
       </div>
     </div>
   );

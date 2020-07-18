@@ -2,8 +2,10 @@
 
 .update-post {
   .content {
+    @include box-shadow;
     @include width-phone;
     margin: 0 auto;
+    padding: 0.5rem 1rem;
     @include flex(column, space-around, stretch);
     p {
       text-align: center;
@@ -14,14 +16,15 @@
     textarea {
       @include textarea;
     }
-    .buttons {
-      @include flex(row, space-evenly, center);
-      width: 100%;
-      a,
-      button {
-        @include button($pc, #fff);
-        width: 40%;
-      }
+  }
+  .buttons {
+    @include flex(row, space-evenly, center);
+    width: 100%;
+    margin-top: 1rem;
+    a,
+    button {
+      @include button($pc, #fff);
+      width: 45%;
     }
   }
 }

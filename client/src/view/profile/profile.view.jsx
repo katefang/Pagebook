@@ -47,9 +47,9 @@ const ProfileView = () => {
       )}
 
       <div className='content'>
-        <hr />
-        <MakePost />
-        <hr />
+        <div className='make-a-post'>
+          <MakePost />
+        </div>
         {filteredPosts &&
           filteredPosts.map(post => (
             <div key={post.id} className='display-post'>

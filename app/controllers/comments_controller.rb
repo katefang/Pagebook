@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :update, :destroy]
+  before_action :set_comment, only: [ :show, :update, :destroy]
 
   # GET /comments
   def index
@@ -9,9 +9,14 @@ class CommentsController < ApplicationController
   end
 
   # GET /comments/1
-  def show
+  def show_multiple
+    @comment = Comment.where(params:[:user_id])
     render json: @comment
   end
+
+  def show
+    render json: @comment
+  end 
 
   # POST /comments
   def create

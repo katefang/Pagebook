@@ -26,5 +26,14 @@
   .content {
     @include width-phone;
     margin: 1rem auto 0;
+    .make-a-post {
+      @include box-shadow;
+      padding: 1rem;
+    }
+    .display-post {
+      @include box-shadow;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
   }
 }

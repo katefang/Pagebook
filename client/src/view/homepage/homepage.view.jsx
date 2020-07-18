@@ -6,6 +6,7 @@ import { getPosts } from '../../services/posts';
 import FeedHeader from '../../components/feed-header/feed-header.component';
 import Feed from '../../components/feed/feed.component';
 import { PostsContext } from '../../context/posts-context';
+import CommentBox from '../../components/comment-box/comment-box.component';
 
 const Homepage = () => {
   const { posts, setPosts } = useContext(PostsContext);
@@ -24,7 +25,9 @@ const Homepage = () => {
     <div className='homepage'>
       <Header />
       <div className='content'>
-        <MakePost />
+        <div className='make-a-post'>
+          <MakePost />
+        </div>
         {posts &&
           posts.map(post => (
             <div key={post.id} className='display-post'>
@@ -34,6 +37,7 @@ const Homepage = () => {
                 post={post}
               />
               <Feed post={post} />
+              <CommentBox postID={post.id} />
             </div>
           ))}
       </div>
