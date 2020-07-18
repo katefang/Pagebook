@@ -1,0 +1,16 @@
+@import '../../variables.scss';
+
+.view-post {
+  .content {
+    @include width-phone;
+    margin: 0 auto;
+    .comment {
+      textarea {
+        @include textarea;
+      }
+      button {
+        @include button($pc, #fff);
+      }
+    }
+  }
+}
