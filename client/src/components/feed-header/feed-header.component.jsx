@@ -5,8 +5,9 @@ import { deletePost } from '../../services/posts';
 import { ThreeDots, EyeFill, TrashFill, Pencil } from 'react-bootstrap-icons';
 import Modal from 'react-bootstrap/esm/Modal';
 import { useHistory } from 'react-router-dom';
+import Avatar from '../avatar/avatar.component';
 
-const FeedHeader = ({ id, time, post }) => {
+const FeedHeader = ({ userID, time, post }) => {
   const [users, setUsers] = useState(null);
   const { push } = useHistory();
   const [modalShow, setModalShow] = useState(false);
@@ -21,7 +22,7 @@ const FeedHeader = ({ id, time, post }) => {
   }, []);
 
   if (users) {
-    user = users.find(person => person.id === id);
+    user = users.find(person => person.id === userID);
   }
 
   const handleModalClose = () => setModalShow(false);
@@ -47,12 +48,11 @@ const FeedHeader = ({ id, time, post }) => {
 
   return (
     <div className='feed-header'>
-      {user && (
+      {users && user && (
         <div className='fh-content'>
           <div className='left'>
             <div className='avatar'>
-              {user.first_name.charAt(0).toUpperCase() +
-                user.last_name.charAt(0).toUpperCase()}
+              <Avatar user={user} />
             </div>
             <div className='author-and-time'>
               <div className='author'>

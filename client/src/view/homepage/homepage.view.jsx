@@ -5,16 +5,17 @@ import MakePost from '../../components/make-post/make-post.component';
 import { getPosts } from '../../services/posts';
 import FeedHeader from '../../components/feed-header/feed-header.component';
 import Feed from '../../components/feed/feed.component';
-import { PostsContext } from '../../context/posts-context';
 import CommentBox from '../../components/comment-box/comment-box.component';
+import ShowComment from '../../components/show-comment/show-comment.component';
+import { AdminContext } from '../../context/admin-context';
 
 const Homepage = () => {
-  const { posts, setPosts } = useContext(PostsContext);
+  const [posts, setPosts] = useState();
+  const { admin } = useContext(AdminContext);
 
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await getPosts();
-      console.log(response);
       setPosts(response);
     };
 
@@ -29,14 +30,16 @@ const Homepage = () => {
           <MakePost />
         </div>
         {posts &&
+          admin &&
           posts.map(post => (
             <div key={post.id} className='display-post'>
               <FeedHeader
-                id={post.user_id}
+                userID={post.user_id}
                 time={post.created_at}
                 post={post}
               />
               <Feed post={post} />
+              <ShowComment post={post} user={admin} />
               <CommentBox postID={post.id} />
             </div>
           ))}

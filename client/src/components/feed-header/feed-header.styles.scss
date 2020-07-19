@@ -7,10 +7,6 @@
     @include flex(row, space-between, start);
     .left {
       @include flex(row, flex-start, center);
-      .avatar {
-        @include circle(3rem);
-      }
-
       .author-and-time {
         margin-left: 1rem;
         .time {

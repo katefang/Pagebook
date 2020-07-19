@@ -9,11 +9,6 @@ class CommentsController < ApplicationController
   end
 
   # GET /comments/1
-  def show_multiple
-    @comment = Comment.where(params:[:user_id])
-    render json: @comment
-  end
-
   def show
     render json: @comment
   end 

@@ -1,9 +1,10 @@
 @import '../../variables.scss';
 
 .main-header {
+  background-color: #fff;
   display: flex;
   @include flex(row, space-between, center);
-  margin: 1rem;
+  padding: 1rem;
   a {
     text-decoration: none;
     color: $pc;
