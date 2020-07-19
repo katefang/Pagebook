@@ -1,8 +1,8 @@
 @import '../../variables.scss';
 
-.comment-box {
+.add-comment-bar {
   @include flex(row, space-between, center);
-  .comment-box-avatar {
+  .add-comment-bar-avatar {
     @include circle(3rem);
   }
   input {

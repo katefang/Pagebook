@@ -1,10 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react';
-import './comment-box.styles.scss';
+import './add-comment-bar.styles.scss';
 import { ReactComponent as SendIcon } from '../../images/send.svg';
 import { AdminContext } from '../../context/admin-context';
 import { createComment } from '../../services/comments';
 
-const CommentBox = ({ postID }) => {
+const AddCommentBar = ({ postID }) => {
   const { admin } = useContext(AdminContext);
   const [input, setInput] = useState('');
 
@@ -30,8 +30,8 @@ const CommentBox = ({ postID }) => {
   return (
     <>
       {admin && (
-        <div className='comment-box'>
-          <div className='comment-box-avatar'>
+        <div className='add-comment-bar'>
+          <div className='add-comment-bar-avatar'>
             {admin.first_name.charAt(0).toUpperCase() +
               admin.last_name.charAt(0).toUpperCase()}
           </div>
@@ -50,4 +50,4 @@ const CommentBox = ({ postID }) => {
   );
 };
 
-export default CommentBox;
+export default AddCommentBar;

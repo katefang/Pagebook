@@ -5,9 +5,9 @@ import MakePost from '../../components/make-post/make-post.component';
 import { getPosts } from '../../services/posts';
 import FeedHeader from '../../components/feed-header/feed-header.component';
 import Feed from '../../components/feed/feed.component';
-import CommentBox from '../../components/comment-box/comment-box.component';
 import ShowComment from '../../components/show-comment/show-comment.component';
 import { AdminContext } from '../../context/admin-context';
+import AddCommentBar from '../../components/add-comment-bar/add-comment-bar.component';
 
 const Homepage = () => {
   const [posts, setPosts] = useState();
@@ -40,7 +40,7 @@ const Homepage = () => {
               />
               <Feed post={post} />
               <ShowComment post={post} user={admin} />
-              <CommentBox postID={post.id} />
+              <AddCommentBar postID={post.id} />
             </div>
           ))}
       </div>
