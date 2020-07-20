@@ -6,3 +6,10 @@
 .post-footer {
   @include flex(row, space-between, center);
 }
+
+.like {
+  display: flex;
+  .like-icon {
+    width: 1rem;
+  }
+}

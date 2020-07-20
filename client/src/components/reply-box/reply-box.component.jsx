@@ -11,10 +11,6 @@ const ReplyBox = ({ comment }) => {
   let hoursDifference = Math.floor(difference / 1000 / 60 / 60);
   let minutesDifference = Math.floor(difference / 1000 / 60);
 
-  console.log(daysDifference);
-  console.log(hoursDifference);
-  console.log(minutesDifference);
-
   let time;
   if (daysDifference > 0) {
     time = daysDifference + 'd';
@@ -27,8 +23,6 @@ const ReplyBox = ({ comment }) => {
   ) {
     time = minutesDifference + 'm';
   }
-
-  console.log(time);
 
   return (
     <>

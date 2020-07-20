@@ -12,7 +12,11 @@
   }
   .bio {
     .profile-avatar {
-      @include circle(5rem);
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      background-color: #fff;
+      @include flex(row, center, center);
       position: absolute;
       top: 8rem;
       right: 40vw;
@@ -33,7 +37,7 @@
     .display-post {
       @include box-shadow;
       padding: 1rem;
-      margin-top: 1rem;
+      margin-top: 0.5rem;
     }
   }
 }

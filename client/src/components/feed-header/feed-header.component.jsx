@@ -3,14 +3,14 @@ import './feed-header.styles.scss';
 import { getUsers } from '../../services/users';
 import { deletePost } from '../../services/posts';
 import { ThreeDots, EyeFill, TrashFill, Pencil } from 'react-bootstrap-icons';
-import Modal from 'react-bootstrap/esm/Modal';
 import { useHistory } from 'react-router-dom';
 import Avatar from '../avatar/avatar.component';
+import Modal from '../modal/modal.component';
 
 const FeedHeader = ({ userID, time, post }) => {
   const [users, setUsers] = useState(null);
   const { push } = useHistory();
-  const [modalShow, setModalShow] = useState(false);
+  const [show, setShow] = useState(false);
   let user;
 
   useEffect(() => {
@@ -25,13 +25,13 @@ const FeedHeader = ({ userID, time, post }) => {
     user = users.find(person => person.id === userID);
   }
 
-  const handleModalClose = () => setModalShow(false);
-
-  const handleModalShow = () => setModalShow(true);
+  const toggleModal = () => {
+    setShow(!show);
+  };
 
   const handleDeletePost = async () => {
     await deletePost(post.id);
-    handleModalClose();
+    toggleModal();
     window.location.reload();
   };
 
@@ -62,14 +62,9 @@ const FeedHeader = ({ userID, time, post }) => {
             </div>
           </div>
           <div className='right'>
-            <ThreeDots onClick={handleModalShow} />
-            <Modal
-              centered
-              size='sm'
-              show={modalShow}
-              onHide={handleModalClose}
-            >
-              <Modal.Body>
+            <ThreeDots onClick={toggleModal} />
+            <Modal show={show} toggleModal={toggleModal}>
+              <div className='edit-delete-view'>
                 <p onClick={() => push(`/update-post/${post.id}`)}>
                   <Pencil className='icon' /> <span> Edit</span>
                 </p>
@@ -81,7 +76,7 @@ const FeedHeader = ({ userID, time, post }) => {
                 <p>
                   <EyeFill className='icon' /> <span> View</span>
                 </p>
-              </Modal.Body>
+              </div>
             </Modal>
           </div>
         </div>

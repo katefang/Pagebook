@@ -14,7 +14,7 @@ function App() {
   return (
     <div className='App'>
       <Switch>
-        <Route exact exact path='/' render={() => <LandingView />} />
+        <Route exact path='/' render={() => <LandingView />} />
         <Route path='/create-account' render={() => <CreateAccountView />} />
         <Route path='/login' render={() => <LoginView />} />
         <Route path='/home' render={() => <Homepage />} />

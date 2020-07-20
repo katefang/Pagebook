@@ -17,8 +17,8 @@ const Homepage = () => {
     const fetchPosts = async () => {
       const response = await getPosts();
       setPosts(response);
+      console.log(response);
     };
-
     fetchPosts();
   }, []);
 

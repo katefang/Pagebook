@@ -11,6 +11,7 @@ const ProfileView = () => {
   const { admin } = useContext(AdminContext);
   const [localPosts, setLocalPosts] = useState(null);
   const { setPosts } = useContext(PostsContext);
+  let filteredPosts;
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -22,8 +23,6 @@ const ProfileView = () => {
 
     fetchPosts();
   }, []);
-
-  let filteredPosts;
 
   if (admin && localPosts) {
     filteredPosts = localPosts.filter(post => post.user_id === admin.id);
@@ -54,7 +53,7 @@ const ProfileView = () => {
           filteredPosts.map(post => (
             <div key={post.id} className='display-post'>
               <FeedHeader
-                id={post.user_id}
+                userID={post.user_id}
                 time={post.created_at}
                 post={post}
               />

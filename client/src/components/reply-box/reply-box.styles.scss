@@ -1,1 +1,8 @@
 @import '../../variables.scss';
+
+.reply-box {
+  display: flex;
+  span {
+    padding: 0 0.3rem;
+  }
+}
