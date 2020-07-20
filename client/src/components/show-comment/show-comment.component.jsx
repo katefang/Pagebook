@@ -21,7 +21,6 @@ const ShowComment = ({ comment, userID }) => {
   const fetchUser = async () => {
     if (userID) {
       const response = await getUser(userID);
-      console.log(response);
       setUser(response);
     }
   };

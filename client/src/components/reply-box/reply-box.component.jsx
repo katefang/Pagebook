@@ -29,8 +29,6 @@ const ReplyBox = ({ comment }) => {
       {comment && (
         <div className='reply-box'>
           <span className='time'>{time} </span>
-          <span className='like'> Like</span>
-          <span className='reply'> Reply</span>
         </div>
       )}
     </>

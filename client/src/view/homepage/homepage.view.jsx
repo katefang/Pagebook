@@ -6,7 +6,6 @@ import { getPosts } from '../../services/posts';
 import FeedHeader from '../../components/feed-header/feed-header.component';
 import Feed from '../../components/feed/feed.component';
 import { AdminContext } from '../../context/admin-context';
-import AddCommentBar from '../../components/add-comment-bar/add-comment-bar.component';
 
 const Homepage = () => {
   const [posts, setPosts] = useState();
@@ -36,7 +35,6 @@ const Homepage = () => {
                 post={post}
               />
               <Feed postProp={post} />
-              <AddCommentBar postID={post.id} />
             </div>
           ))}
       </div>

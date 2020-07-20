@@ -28,7 +28,6 @@
   }
 
   .content {
-    @include width-phone;
     margin: 1rem auto 0;
     .make-a-post {
       @include box-shadow;

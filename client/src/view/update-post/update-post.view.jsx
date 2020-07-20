@@ -19,7 +19,6 @@ const UpdatePostView = () => {
   useEffect(() => {
     const fetchPost = async () => {
       const response = await getPost(+id);
-      console.log(response);
       setInput(response.post_text);
     };
     fetchPost();

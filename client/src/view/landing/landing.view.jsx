@@ -9,7 +9,7 @@ const LandingView = () => (
     <div className='content'>
       <h2>Join Fansbook</h2>
       <p>We'll help you create an account in a few easy steps.</p>
-      <Link to='/create-account'>
+      <Link to='/create-account' className='button'>
         <button>Get Started</button>
       </Link>
 

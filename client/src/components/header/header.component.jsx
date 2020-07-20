@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import './header.styles.scss';
-import { Search, PersonFill } from 'react-bootstrap-icons';
+import { PersonFill } from 'react-bootstrap-icons';
 import { Link, useHistory } from 'react-router-dom';
 import { AdminContext } from '../../context/admin-context';
 import Modal from '../modal/modal.component';
@@ -22,7 +22,7 @@ const Header = () => {
     push('/login');
   };
 
-  const handleProfileOpen = () => push('profile');
+  const handleProfileOpen = () => push('/profile');
 
   return (
     <div className='main-header'>
@@ -30,9 +30,6 @@ const Header = () => {
         <h2>fansbook</h2>
       </Link>
       <div className='icons'>
-        <div className='search'>
-          <Search />
-        </div>
         <div className='person'>
           <PersonFill onClick={toggleModal} />
         </div>

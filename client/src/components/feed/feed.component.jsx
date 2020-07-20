@@ -1,18 +1,19 @@
 import React, { useContext, useState, useEffect } from 'react';
 import './feed.styles.scss';
 import { ChatSquare } from 'react-bootstrap-icons';
-import { useHistory } from 'react-router-dom';
+import { ReactComponent as SendIcon } from '../../images/send.svg';
 import { ReactComponent as LikeIcon } from '../../images/like.svg';
 import { ReactComponent as LikeFilledIcon } from '../../images/likeFilled.svg';
 import { ReactComponent as BlueLike } from '../../images/blueLike.svg';
 import { createLike, deleteLike } from '../../services/likes';
+import { createComment } from '../../services/comments';
 import { getPost } from '../../services/posts';
-import { AdminContext } from '../../context/admin-context';
-import { getUser } from '../../services/users';
 import ShowComment from '../show-comment/show-comment.component';
+import { AdminContext } from '../../context/admin-context';
 
 const Feed = ({ postProp }) => {
-  const { push } = useHistory();
+  const { admin } = useContext(AdminContext);
+  const [input, setInput] = useState('');
   const [post, setPost] = useState();
   const [liked, setLiked] = useState(null);
   const [totalLikes, setTotalLikes] = useState(0);
@@ -22,6 +23,25 @@ const Feed = ({ postProp }) => {
   let comment;
 
   totalComments > 1 ? (comment = 'comments') : (comment = 'comment');
+
+  const handleChange = e => {
+    const { value } = e.target;
+    setInput(value);
+  };
+
+  const handleCommentSubmit = async () => {
+    try {
+      await createComment({
+        user_id: admin.id,
+        post_id: postProp.id,
+        comment_text: input
+      });
+      fetchPost();
+      setInput('');
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     fetchPost();
@@ -41,7 +61,7 @@ const Feed = ({ postProp }) => {
   const handleLike = async () => {
     try {
       const response = await createLike({
-        user_id: postProp.user_id,
+        user_id: admin.id,
         post_id: postProp.id
       });
       await fetchPost();
@@ -53,7 +73,7 @@ const Feed = ({ postProp }) => {
 
   const handleDeleteLike = async id => {
     try {
-      const response = await deleteLike(id);
+      await deleteLike(id);
       await fetchPost();
       setLiked(null);
     } catch (error) {
@@ -62,7 +82,15 @@ const Feed = ({ postProp }) => {
   };
 
   const toggleLike = () => {
-    liked ? handleDeleteLike(liked.id) : handleLike();
+    if (liked) {
+      if (liked.user_id === postProp.user_id) {
+        handleDeleteLike(liked.id);
+      } else {
+        handleLike();
+      }
+    } else {
+      handleLike();
+    }
   };
 
   const togglesShowComment = () => {
@@ -71,7 +99,7 @@ const Feed = ({ postProp }) => {
 
   return (
     <>
-      {post && (
+      {post && admin && (
         <>
           <div className='post-text'>{post.post_text}</div>
           <div className='like-comment-popup'>
@@ -89,7 +117,7 @@ const Feed = ({ postProp }) => {
           <hr />
           <div className='post-footer'>
             <div className='like' onClick={toggleLike}>
-              {liked ? (
+              {liked && liked.user_id === admin.id ? (
                 <LikeFilledIcon className='like-icon' />
               ) : (
                 <LikeIcon className='like-icon' />
@@ -109,6 +137,22 @@ const Feed = ({ postProp }) => {
                 key={comment.id}
               />
             ))}
+          </div>
+
+          <div className='add-comment-bar'>
+            <div className='add-comment-bar-avatar'>
+              {admin.first_name.charAt(0).toUpperCase() +
+                admin.last_name.charAt(0).toUpperCase()}
+            </div>
+            <input
+              type='text'
+              placeholder='write a comment....'
+              value={input}
+              onChange={handleChange}
+            />
+            <div className='send-icon'>
+              <SendIcon onClick={handleCommentSubmit} />
+            </div>
           </div>
         </>
       )}

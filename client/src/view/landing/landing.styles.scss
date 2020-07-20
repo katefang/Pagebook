@@ -1,13 +1,12 @@
 @import '../../variables.scss';
 
 .landing-view {
+  background-color: #fff;
   @include flex(column, center, space-between);
   height: 100vh;
   text-align: center;
   .content {
-    @include width-phone;
     margin: 5rem auto 0;
-    line-height: 3rem;
     @include flex(column, space-between, stretch);
     flex: auto;
     h2 {
@@ -15,12 +14,19 @@
       font-weight: 500;
     }
     p {
-      line-height: 1.5rem;
+      padding: 1rem 0;
     }
-    button {
-      margin-top: 1rem;
-      width: 100%;
-      @include button($pc, #fff);
+    .button {
+      width: 90%;
+      margin: 0 auto;
+      button {
+        margin-top: 1rem;
+        width: 100%;
+        @include button($pc, #fff);
+      }
+
+      @include width-tablet;
+      @include width-desktop;
     }
 
     .footer {

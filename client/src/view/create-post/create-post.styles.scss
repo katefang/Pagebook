@@ -1,14 +1,10 @@
 @import '../../variables.scss';
 
 .create-post {
-  display: flex;
-  flex-direction: column;
   .content {
     @include box-shadow;
-    @include width-phone;
     padding: 0.5rem 1rem;
-    margin: 0 auto;
-    @include flex(column, space-around, stretch);
+    margin: 1rem auto;
     p {
       text-align: center;
     }
@@ -18,10 +14,16 @@
     textarea {
       @include textarea;
     }
+    @include width-tablet;
+    @include width-desktop;
   }
-  button {
-    @include width-phone;
-    @include button($pc, #fff);
-    margin: 1rem auto 0;
+
+  .button {
+    width: 90%;
+    margin: 0 auto;
+    button {
+      @include button($pc, #fff);
+      width: 100%;
+    }
   }
 }

@@ -2,7 +2,6 @@
 
 .view-post {
   .content {
-    @include width-phone;
     margin: 0 auto;
     .post {
       @include box-shadow;

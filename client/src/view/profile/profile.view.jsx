@@ -16,7 +16,6 @@ const ProfileView = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await getPosts();
-      console.log(response);
       setPosts(response);
       setLocalPosts(response);
     };
@@ -57,7 +56,7 @@ const ProfileView = () => {
                 time={post.created_at}
                 post={post}
               />
-              <Feed post={post} />
+              <Feed postProp={post} />
             </div>
           ))}
       </div>

@@ -1,34 +1,37 @@
 @import '../../variables.scss';
 
 .create-account-view {
-  height: 100vh;
-  @include flex(column, space-between, stretch);
+  background-color: #fff;
+  @include flex(column, space-evenly, stretch);
   margin: 0;
   .content {
-    @include width-phone;
-    margin: 0 auto;
+    margin: 1rem auto;
     text-align: center;
-    line-height: 2.5rem;
-    @include flex(column, center, space-around);
+    @include flex(column, space-around, stretch);
 
-    .question {
-      font-size: 1.2rem;
-      color: $pc;
-      font-weight: 600;
-      margin-top: 1rem;
-    }
     .name {
       @include flex(column, center, stretch);
     }
     .gender {
-      @include flex(column, center, center);
+      @include flex(column, space-evenly, center);
       label {
-        width: 30%;
-        @include flex(row, space-evenly, center);
+        width: 28%;
+        @include flex(row, space-between, center);
         input {
           width: 15%;
         }
       }
+    }
+    h2 {
+      font-weight: 600;
+    }
+    h6 {
+      margin: 1rem 0;
+    }
+    p {
+      color: #aaa;
+      font-weight: 700;
+      font-size: 1.2rem;
     }
     input {
       @include input;

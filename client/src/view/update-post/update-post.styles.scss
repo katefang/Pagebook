@@ -3,9 +3,8 @@
 .update-post {
   .content {
     @include box-shadow;
-    @include width-phone;
-    margin: 0 auto;
-    padding: 0.5rem 1rem;
+    margin: 1rem auto 0;
+    padding: 1rem;
     @include flex(column, space-around, stretch);
     p {
       text-align: center;

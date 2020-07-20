@@ -42,7 +42,9 @@ const CreatePost = () => {
           onChange={handleChange}
         />
       </div>
-      <button onClick={handlePostSubmit}>Post</button>
+      <div className='button'>
+        <button onClick={handlePostSubmit}>Post</button>
+      </div>
     </div>
   );
 };

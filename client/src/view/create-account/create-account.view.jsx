@@ -40,7 +40,8 @@ const CreateAccountView = () => {
     <div className='create-account-view'>
       <Header />
       <div className='content'>
-        <div className='question'>What's Your Name?</div>
+        <h2 className='title'>Create a New Account</h2>
+        <h6 className='subtitle'>It's quick and easy.</h6>
         <div className='name'>
           <label>
             <input
@@ -61,12 +62,35 @@ const CreateAccountView = () => {
             />
           </label>
         </div>
-        <div className='question'>When's Your Birthday?</div>
+
         <label>
-          <input type='date' name='DOB' value={DOB} onChange={handleChange} />
+          <input
+            type='email'
+            name='email'
+            value={email}
+            placeholder='email'
+            onChange={handleChange}
+          />
         </label>
-        <div className='question'>What's Your Gender?</div>
+        <label>
+          <input
+            type='password'
+            name='password'
+            value={password}
+            placeholder='password'
+            onChange={handleChange}
+          />
+        </label>
+        <div className='birthday'>
+          <p>Birthday</p>
+
+          <label>
+            <input type='date' name='DOB' value={DOB} onChange={handleChange} />
+          </label>
+        </div>
+
         <div className='gender'>
+          <p> Gender</p>
           <label>
             <input
               type='radio'
@@ -92,32 +116,12 @@ const CreateAccountView = () => {
               type='radio'
               name='gender'
               value='idk'
-              checked={gender === 'idk'}
+              checked={gender === 'not sure'}
               onChange={handleChange}
             />
-            idk
-          </label>{' '}
+            not sure
+          </label>
         </div>
-        <div className='question'>What's Your Email Address?</div>
-        <label>
-          <input
-            type='email'
-            name='email'
-            value={email}
-            placeholder='email'
-            onChange={handleChange}
-          />
-        </label>
-        <div className='question'>Create a Password</div>
-        <label>
-          <input
-            type='password'
-            name='password'
-            value={password}
-            placeholder='password'
-            onChange={handleChange}
-          />
-        </label>
         <button onClick={handleSignUp}>Sign Up</button>
         <div className='footer'>
           <hr />
