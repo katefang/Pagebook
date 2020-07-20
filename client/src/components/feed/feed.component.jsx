@@ -8,6 +8,8 @@ import { ReactComponent as BlueLike } from '../../images/blueLike.svg';
 import { createLike, deleteLike } from '../../services/likes';
 import { getPost } from '../../services/posts';
 import { AdminContext } from '../../context/admin-context';
+import { getUser } from '../../services/users';
+import ShowComment from '../show-comment/show-comment.component';
 
 const Feed = ({ postProp }) => {
   const { push } = useHistory();
@@ -15,6 +17,7 @@ const Feed = ({ postProp }) => {
   const [liked, setLiked] = useState(null);
   const [totalLikes, setTotalLikes] = useState(0);
   const [totalComments, setTotalComments] = useState(0);
+  const [commentDisplay, setCommentDisplay] = useState('none');
 
   let comment;
 
@@ -31,7 +34,6 @@ const Feed = ({ postProp }) => {
   const fetchPost = async () => {
     const response = await getPost(postProp.id);
     setPost(response);
-    console.log(response);
     setTotalLikes(response.likes.length);
     setTotalComments(response.comments.length);
   };
@@ -63,12 +65,15 @@ const Feed = ({ postProp }) => {
     liked ? handleDeleteLike(liked.id) : handleLike();
   };
 
+  const togglesShowComment = () => {
+    setCommentDisplay('block');
+  };
+
   return (
     <>
       {post && (
         <>
           <div className='post-text'>{post.post_text}</div>
-
           <div className='like-comment-popup'>
             {totalLikes > 0 && (
               <div className='popup-left'>
@@ -76,7 +81,7 @@ const Feed = ({ postProp }) => {
               </div>
             )}
             {totalComments > 0 && (
-              <div className='popup-right'>
+              <div className='popup-right' onClick={togglesShowComment}>
                 {totalComments} {comment}
               </div>
             )}
@@ -91,14 +96,20 @@ const Feed = ({ postProp }) => {
               )}
               <span> Like</span>
             </div>
-            <div
-              className='comment'
-              onClick={() => push(`/view-post/${post.id}`)}
-            >
+            <div className='comment' onClick={togglesShowComment}>
               <ChatSquare /> Comment
             </div>
           </div>
           <hr />
+          <div style={{ display: commentDisplay }}>
+            {post.comments.map(comment => (
+              <ShowComment
+                comment={comment}
+                userID={comment.user_id}
+                key={comment.id}
+              />
+            ))}
+          </div>
         </>
       )}
     </>

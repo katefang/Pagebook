@@ -1,20 +1,18 @@
 @import '../../variables.scss';
 
-.show-comment {
-  .each-comment {
-    display: flex;
-    padding: 1rem 1rem 0 1rem;
-    .name-and-comment {
-      margin-left: 1rem;
-      padding: 0.1rem 0.8rem;
-      background-color: $sc;
-      border-radius: 1rem;
-      .name {
-        font-weight: 600;
-      }
+.each-comment {
+  display: flex;
+  padding: 1rem 1rem 0 1rem;
+  .name-and-comment {
+    margin-left: 1rem;
+    padding: 0.1rem 0.8rem;
+    background-color: $sc;
+    border-radius: 1rem;
+    .name {
+      font-weight: 600;
     }
   }
-  .reply-bar {
-    padding-left: 5.4rem;
-  }
+}
+.reply-bar {
+  padding-left: 5.4rem;
 }
