@@ -38,7 +38,7 @@ const Homepage = () => {
                 time={post.created_at}
                 post={post}
               />
-              <Feed post={post} />
+              <Feed postProp={post} />
               <ShowComment post={post} user={admin} />
               <AddCommentBar postID={post.id} />
             </div>

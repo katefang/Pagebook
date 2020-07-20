@@ -12,4 +12,22 @@
   .like-icon {
     width: 1rem;
   }
+  span {
+    margin-left: 3px;
+  }
+}
+
+.like-comment-popup {
+  display: flex;
+  justify-content: space-between;
+  .popup-left {
+    justify-self: flex-start;
+  }
+  .popup-right {
+    justify-self: flex-end;
+    margin-left: auto;
+  }
+  .popup-icon {
+    width: 1rem;
+  }
 }
