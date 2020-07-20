@@ -3,9 +3,12 @@ import './create-post.styles.scss';
 import Header from '../../components/header/header.component';
 import { AdminContext } from '../../context/admin-context';
 import { createPost } from '../../services/posts';
+import { useHistory } from 'react-router-dom';
 
 const CreatePost = () => {
   const { admin } = useContext(AdminContext);
+
+  const { push } = useHistory();
 
   const [input, setInput] = useState();
 
@@ -16,11 +19,11 @@ const CreatePost = () => {
 
   const handlePostSubmit = async () => {
     try {
-      const response = await createPost({
+      await createPost({
         user_id: admin.id,
         post_text: input
       });
-      console.log(response);
+      push('/home');
     } catch (error) {
       console.log(error);
     }

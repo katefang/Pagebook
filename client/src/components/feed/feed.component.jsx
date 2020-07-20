@@ -19,7 +19,7 @@ const Feed = ({ postProp }) => {
   const [totalLikes, setTotalLikes] = useState(0);
   const [totalComments, setTotalComments] = useState(0);
   const [commentDisplay, setCommentDisplay] = useState('none');
-
+  let likedPost;
   let comment;
 
   totalComments > 1 ? (comment = 'comments') : (comment = 'comment');
@@ -45,9 +45,7 @@ const Feed = ({ postProp }) => {
 
   useEffect(() => {
     fetchPost();
-    const likedPost = postProp.likes.find(
-      one => one.user_id === postProp.user_id
-    );
+    likedPost = postProp.likes.find(one => one.user_id === postProp.user_id);
     setLiked(likedPost);
   }, []);
 
@@ -82,8 +80,10 @@ const Feed = ({ postProp }) => {
   };
 
   const toggleLike = () => {
+    console.log(liked);
+
     if (liked) {
-      if (liked.user_id === postProp.user_id) {
+      if (liked.user_id === admin.id) {
         handleDeleteLike(liked.id);
       } else {
         handleLike();

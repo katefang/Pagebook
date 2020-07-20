@@ -27,8 +27,6 @@ const ProfileView = () => {
     filteredPosts = localPosts.filter(post => post.user_id === admin.id);
   }
 
-  console.log(filteredPosts);
-
   return (
     <div className='profile-view'>
       <div className='header' />
