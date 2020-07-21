@@ -15,15 +15,18 @@
     textarea {
       @include textarea;
     }
+    @include width-tablet;
+    @include width-desktop;
   }
   .buttons {
-    @include flex(row, space-evenly, center);
+    @include flex(row, space-between, center);
     width: 100%;
-    margin-top: 1rem;
-    a,
+    margin: 1rem auto;
+    @include width-tablet;
+    @include width-desktop;
     button {
       @include button($pc, #fff);
-      width: 45%;
+      width: 48%;
     }
   }
 }
