@@ -26,8 +26,12 @@ const ViewPost = () => {
       {post && (
         <div className='content'>
           <div className='post'>
-            <FeedHeader id={post.user_id} time={post.created_at} post={post} />
-            <Feed post={post} />
+            <FeedHeader
+              userID={post.user_id}
+              time={post.created_at}
+              post={post}
+            />
+            <Feed postProp={post} />
           </div>
           <div className='comment'>
             <textarea placeholder='comment' />

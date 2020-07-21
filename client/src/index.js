@@ -5,15 +5,12 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import AdminContextProvider from './context/admin-context';
-import PostsContextProvider from './context/posts-context';
 
 ReactDOM.render(
   <AdminContextProvider>
-    <PostsContextProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </PostsContextProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </AdminContextProvider>,
   document.getElementById('root')
 );

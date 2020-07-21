@@ -5,18 +5,15 @@ import MakePost from '../../components/make-post/make-post.component';
 import { getPosts } from '../../services/posts';
 import Feed from '../../components/feed/feed.component';
 import FeedHeader from '../../components/feed-header/feed-header.component';
-import { PostsContext } from '../../context/posts-context';
 
 const ProfileView = () => {
   const { admin } = useContext(AdminContext);
   const [localPosts, setLocalPosts] = useState(null);
-  const { setPosts } = useContext(PostsContext);
   let filteredPosts;
 
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await getPosts();
-      setPosts(response);
       setLocalPosts(response);
     };
 
