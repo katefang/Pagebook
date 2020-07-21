@@ -44,6 +44,9 @@
     border-radius: 1rem;
     outline: none;
     width: 15rem;
+    @media screen and (min-width: $breakpoint-tablet) {
+      width: 30rem;
+    }
   }
   .send-icon {
     width: 1.2rem;

@@ -77,3 +77,22 @@ $breakpoint-desktop: 1024px;
   background-color: #fff;
   border-radius: 5px;
 }
+
+@mixin side-pane {
+  .desktop {
+    display: flex;
+    justify-content: space-around;
+    .content {
+      @media screen and(min-width: $breakpoint-desktop) {
+        margin: 0 0 0 1rem;
+        width: 60%;
+      }
+    }
+    .side-pane {
+      background-color: #fff;
+      @media screen and(max-width: $breakpoint-tablet) {
+        display: none;
+      }
+    }
+  }
+}

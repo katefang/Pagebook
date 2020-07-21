@@ -1,6 +1,6 @@
 @import '../../variables.scss';
 
-.profile-view {
+.profile {
   height: 100vh;
   .header {
     width: 100%;
@@ -26,6 +26,10 @@
       @media screen and (min-width: $breakpoint-tablet) {
         left: 44vw;
       }
+
+      @media screen and (min-width: $breakpoint-desktop) {
+        left: 46vw;
+      }
     }
     p {
       text-align: center;
@@ -33,7 +37,6 @@
   }
 
   .content {
-    margin: 1rem auto 0;
     .make-a-post {
       @include box-shadow;
       padding: 1rem;
@@ -43,7 +46,9 @@
       padding: 1rem;
       margin-top: 0.5rem;
     }
-    @include width-tablet;
-    @include width-desktop;
+    @media screen and(min-width: $breakpoint-tablet) {
+      width: 90%;
+    }
   }
+  @include side-pane;
 }

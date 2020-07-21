@@ -4,12 +4,13 @@ import { Route, Switch } from 'react-router-dom';
 import LandingView from './view/landing/landing.view';
 import CreateAccountView from './view/create-account/create-account.view';
 import LoginView from './view/login/login.view';
-import ProfileView from './view/profile/profile.view';
+import AdminProfileView from './view/admin-profile/admin-profile.view';
 import Homepage from './view/homepage/homepage.view';
 import CreatePost from './view/create-post/create-post.view';
 import UpdatePostView from './view/update-post/update-post.view';
 import ViewPost from './view/view-post/view-post';
 import { AdminContext } from './context/admin-context';
+import UserProfileView from './view/user-profile/user-profile-view';
 
 function App() {
   const { admin } = useContext(AdminContext);
@@ -30,8 +31,9 @@ function App() {
         />
         <Route
           path='/profile'
-          render={() => (admin ? <ProfileView /> : <LoginView />)}
+          render={() => (admin ? <AdminProfileView /> : <LoginView />)}
         />
+        <Route path='/user-profile/:id' render={() => <UserProfileView />} />
         <Route path='/update-post/:id' render={() => <UpdatePostView />} />
         <Route path='/view-post/:id' render={() => <ViewPost />} />
       </Switch>

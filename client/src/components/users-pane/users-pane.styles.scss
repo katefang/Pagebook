@@ -1,0 +1,18 @@
+@import '../../variables.scss';
+
+.users-pane {
+  position: fixed;
+  width: 15rem;
+  padding: 1rem;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  margin: 0 1rem;
+  .avatar-and-author {
+    @include flex(row, flex-start, center);
+    padding: 0.5rem 0;
+    .author {
+      padding-left: 0.5rem;
+    }
+  }
+}

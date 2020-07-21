@@ -15,7 +15,10 @@
       padding: 0.5rem 1rem;
       @include box-shadow;
     }
-    @include width-tablet;
-    @include width-desktop;
+
+    @media screen and(min-width: $breakpoint-desktop) {
+      margin: 0 0 0 1rem;
+    }
   }
+  @include side-pane;
 }
