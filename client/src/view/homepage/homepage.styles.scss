@@ -6,11 +6,16 @@
     .make-a-post {
       @include box-shadow;
       padding: 1rem;
+      @media screen and (min-width: $breakpoint-tablet) {
+        margin-top: 1rem;
+      }
     }
     .display-post {
-      margin-top: 0.5rem;
+      margin-top: 1rem;
       padding: 0.5rem 1rem;
       @include box-shadow;
     }
+    @include width-tablet;
+    @include width-desktop;
   }
 }

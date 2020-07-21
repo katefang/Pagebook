@@ -9,6 +9,9 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    @media screen and (min-width: $breakpoint-tablet) {
+      height: 25vh;
+    }
   }
   .bio {
     .profile-avatar {
@@ -17,13 +20,15 @@
       border-radius: 50%;
       background-color: #fff;
       @include flex(row, center, center);
-      position: absolute;
-      top: 8rem;
-      right: 40vw;
+      position: relative;
+      bottom: 2rem;
+      left: 40vw;
+      @media screen and (min-width: $breakpoint-tablet) {
+        left: 44vw;
+      }
     }
     p {
       text-align: center;
-      margin-top: 4rem;
     }
   }
 
@@ -38,5 +43,7 @@
       padding: 1rem;
       margin-top: 0.5rem;
     }
+    @include width-tablet;
+    @include width-desktop;
   }
 }

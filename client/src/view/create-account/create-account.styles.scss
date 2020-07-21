@@ -1,9 +1,8 @@
 @import '../../variables.scss';
 
 .create-account-view {
-  background-color: #fff;
-  @include flex(column, space-evenly, stretch);
   margin: 0;
+  height: 100vh;
   .content {
     margin: 1rem auto;
     text-align: center;
@@ -15,15 +14,15 @@
     .gender {
       @include flex(column, space-evenly, center);
       label {
-        width: 28%;
+        width: 15%;
         @include flex(row, space-between, center);
         input {
-          width: 15%;
+          width: 1rem;
         }
       }
     }
-    h2 {
-      font-weight: 600;
+    h3 {
+      font-weight: 500;
     }
     h6 {
       margin: 1rem 0;
@@ -45,5 +44,7 @@
     .footer {
       @include footer;
     }
+    @include width-tablet;
+    @include width-desktop;
   }
 }

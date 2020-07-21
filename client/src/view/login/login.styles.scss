@@ -1,27 +1,32 @@
 @import '../../variables.scss';
 
 .login-view {
-  @include flex(column, center, space-between);
+  @include flex(column, space-between, normal);
   height: 100vh;
   .header {
     margin: 0;
     height: 20vh;
     width: 100%;
-    background-image: url(../../images/bg1.jpg);
-    background-size: contain;
+    background-image: url(../../images/bg2.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    @media screen and (min-width: $breakpoint-tablet) {
+      height: 30vh;
+    }
   }
   .content {
     @include flex(column, space-between, center);
     margin: 3rem auto 0;
+    width: 90%;
     flex: auto;
     form {
+      @include flex(column, space-between, normal);
       width: 100%;
       input {
         @include input;
         width: 100%;
       }
-      .email {
-      }
+
       button {
         margin-top: 1.5rem;
         width: 100%;
@@ -41,5 +46,7 @@
         margin-top: 10px;
       }
     }
+    @include width-tablet;
+    @include width-desktop;
   }
 }

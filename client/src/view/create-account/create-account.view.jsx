@@ -40,7 +40,7 @@ const CreateAccountView = () => {
     <div className='create-account-view'>
       <Header />
       <div className='content'>
-        <h2 className='title'>Create a New Account</h2>
+        <h3 className='title'>Create a New Account</h3>
         <h6 className='subtitle'>It's quick and easy.</h6>
         <div className='name'>
           <label>
