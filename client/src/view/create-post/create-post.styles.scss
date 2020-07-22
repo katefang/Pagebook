@@ -2,10 +2,10 @@
 
 .create-post {
   .content {
-    width: 90%;
     @include box-shadow;
     padding: 0.5rem 1rem;
     margin: 1rem auto;
+    width: 90%;
     p {
       text-align: center;
     }
@@ -14,21 +14,40 @@
     }
     textarea {
       @include textarea;
+      margin-top: 0.5rem;
     }
-    @include width-tablet;
-    @include width-desktop;
   }
 
   .button {
     width: 90%;
     margin: 0 auto;
-    @include width-tablet;
-    @include width-desktop;
     button {
       @include button($pc, #fff);
       width: 100%;
     }
-    @include width-tablet;
-    @include width-desktop;
+  }
+  @media screen and(min-width: $breakpoint-tablet) {
+    .content {
+      width: 80%;
+      margin: 2rem auto;
+      p {
+        font-size: 1.5rem;
+      }
+    }
+    .button {
+      width: 80%;
+      button {
+        height: 3rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  @media screen and(min-width: $breakpoint-desktop) {
+    .content {
+      width: 75%;
+    }
+    .button {
+      width: 75%;
+    }
   }
 }

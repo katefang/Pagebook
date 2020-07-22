@@ -28,9 +28,16 @@
   @media screen and(min-width: $breakpoint-tablet) {
     .content {
       width: 80%;
+      p {
+        font-size: 1.5rem;
+      }
     }
     .buttons {
       width: 80%;
+      button {
+        font-size: 1.5rem;
+        height: 3rem;
+      }
     }
   }
   @media screen and(min-width: $breakpoint-desktop) {

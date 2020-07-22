@@ -6,8 +6,10 @@ import { ThreeDots, EyeFill, TrashFill, Pencil } from 'react-bootstrap-icons';
 import { useHistory } from 'react-router-dom';
 import Avatar from '../avatar/avatar.component';
 import Modal from '../modal/modal.component';
+import { AdminContext } from '../../context/admin-context';
 
 const FeedHeader = ({ userID, time, post }) => {
+  const { admin } = useContext(AdminContext);
   const [users, setUsers] = useState(null);
   const { push } = useHistory();
   const [show, setShow] = useState(false);
@@ -30,9 +32,26 @@ const FeedHeader = ({ userID, time, post }) => {
     setUsers(response);
   };
 
+  const handlePostUpdate = () => {
+    if (admin.id === userID) {
+      push(`/update-post/${post.id}`);
+    } else {
+      alert('You cannot edit this post.');
+    }
+  };
+
   const handleDeletePost = async () => {
-    await deletePost(post.id);
-    toggleModal();
+    if (admin.id === userID) {
+      if (window.confirm('Delete Post?')) {
+        await deletePost(post.id);
+        toggleModal();
+        window.location.reload();
+      } else {
+        push('/home');
+      }
+    } else {
+      alert('You cannot delete this post');
+    }
   };
 
   const timeString = new Date(time);
@@ -65,7 +84,7 @@ const FeedHeader = ({ userID, time, post }) => {
             <ThreeDots onClick={toggleModal} />
             <Modal show={show} toggleModal={toggleModal}>
               <div className='edit-delete-view'>
-                <p onClick={() => push(`/update-post/${post.id}`)}>
+                <p onClick={handlePostUpdate}>
                   <Pencil className='icon' /> <span> Edit</span>
                 </p>
                 <hr />
