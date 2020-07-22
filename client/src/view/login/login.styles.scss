@@ -37,6 +37,7 @@
     .footer {
       margin-top: auto;
       width: 100%;
+      padding-bottom: 1rem;
 
       .divider {
         @include flex(row, center, center);

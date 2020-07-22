@@ -24,9 +24,6 @@
         width: 100%;
         @include button($pc, #fff);
       }
-
-      @include width-tablet;
-      @include width-desktop;
     }
 
     .footer {

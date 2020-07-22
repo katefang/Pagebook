@@ -23,8 +23,13 @@ $breakpoint-desktop: 1024px;
   border: 1px #888 solid;
   border-radius: 5px;
   padding-left: 5px;
+  margin-top: 0.1rem;
   &::placeholder {
     padding-left: 2px;
+  }
+  @media screen and(min-width: $breakpoint-tablet) {
+    height: 3rem;
+    margin-top: 0.2rem;
   }
 }
 
@@ -46,18 +51,6 @@ $breakpoint-desktop: 1024px;
   border-radius: 50%;
   background-color: #eee;
   @include flex(row, center, center);
-}
-
-@mixin width-tablet {
-  @media screen and (min-width: $breakpoint-tablet) {
-    width: 80%;
-  }
-}
-
-@mixin width-desktop {
-  @media screen and (min-width: $breakpoint-desktop) {
-    width: 60%;
-  }
 }
 
 @mixin textarea {
