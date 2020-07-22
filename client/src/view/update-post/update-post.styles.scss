@@ -15,18 +15,32 @@
     textarea {
       @include textarea;
     }
-    @include width-tablet;
-    @include width-desktop;
   }
   .buttons {
     @include flex(row, space-between, center);
     width: 100%;
     margin: 1rem auto;
-    @include width-tablet;
-    @include width-desktop;
     button {
       @include button($pc, #fff);
       width: 48%;
+    }
+  }
+  @media screen and(min-width: $breakpoint-tablet) {
+    .content {
+      width: 80%;
+    }
+    .buttons {
+      width: 80%;
+    }
+  }
+  @media screen and(min-width: $breakpoint-desktop) {
+    .content {
+      width: 75%;
+      margin: 3rem auto 0;
+    }
+    .buttons {
+      width: 75%;
+      margin: 2rem auto;
     }
   }
 }
