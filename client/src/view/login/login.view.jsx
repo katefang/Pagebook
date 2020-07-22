@@ -19,10 +19,8 @@ const LoginView = () => {
 
   const handleSignin = async e => {
     e.preventDefault();
-    console.log(input);
     try {
       const response = await loginUser(input);
-      console.log(response);
       setAdmin(response);
       push('/home');
     } catch (error) {

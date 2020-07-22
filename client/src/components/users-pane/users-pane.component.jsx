@@ -14,7 +14,6 @@ const UsersPane = () => {
 
   const fetchUsers = async () => {
     const response = await getUsers();
-    console.log(response);
     setUsers(response);
   };
 

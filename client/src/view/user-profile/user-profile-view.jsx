@@ -25,7 +25,6 @@ const UserProfileView = () => {
   const fetchUser = async () => {
     const response = await getUser(id);
     setUser(response);
-    console.log(user);
   };
 
   if (localPosts) {

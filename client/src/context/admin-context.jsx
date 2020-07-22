@@ -11,7 +11,6 @@ const AdminContextProvider = ({ children }) => {
 
   const verify = async () => {
     const response = await verifyUser();
-    console.log(response);
     setAdmin(response);
   };
 

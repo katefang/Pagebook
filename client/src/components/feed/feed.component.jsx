@@ -80,8 +80,6 @@ const Feed = ({ postProp }) => {
   };
 
   const toggleLike = () => {
-    console.log(liked);
-
     if (liked) {
       if (liked.user_id === admin.id) {
         handleDeleteLike(liked.id);

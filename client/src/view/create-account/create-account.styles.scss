@@ -19,7 +19,7 @@
     }
     .gender {
       margin: 0 auto;
-      width: 22%;
+      width: 25%;
       label {
         @include flex(row, space-between, center);
       }

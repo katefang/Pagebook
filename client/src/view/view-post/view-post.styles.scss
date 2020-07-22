@@ -6,6 +6,7 @@
     .post {
       @include box-shadow;
       padding: 0.5rem 1rem;
+      margin: 1rem auto;
     }
     .view-post-comment {
       margin: 0 auto;

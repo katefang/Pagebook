@@ -24,10 +24,8 @@ const CreateAccountView = () => {
 
   const handleSignUp = async e => {
     e.preventDefault();
-    console.log(input);
     try {
       const response = await registerUser(input);
-      console.log(response);
       setAdmin(response);
       push('/home');
     } catch (error) {
