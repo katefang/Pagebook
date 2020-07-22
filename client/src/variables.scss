@@ -81,8 +81,12 @@ $breakpoint-desktop: 1024px;
 @mixin side-pane {
   .desktop {
     display: flex;
-    justify-content: space-around;
     .content {
+      width: 100%;
+      @media screen and(min-width: $breakpoint-tablet) {
+        margin: 0 auto;
+        width: 80%;
+      }
       @media screen and(min-width: $breakpoint-desktop) {
         margin: 0 0 0 1rem;
         width: 60%;

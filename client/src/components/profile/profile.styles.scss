@@ -46,9 +46,6 @@
       padding: 1rem;
       margin-top: 0.5rem;
     }
-    @media screen and(min-width: $breakpoint-tablet) {
-      width: 90%;
-    }
   }
   @include side-pane;
 }
