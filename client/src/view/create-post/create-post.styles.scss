@@ -2,6 +2,7 @@
 
 .create-post {
   .content {
+    width: 90%;
     @include box-shadow;
     padding: 0.5rem 1rem;
     margin: 1rem auto;
@@ -27,5 +28,7 @@
       @include button($pc, #fff);
       width: 100%;
     }
+    @include width-tablet;
+    @include width-desktop;
   }
 }

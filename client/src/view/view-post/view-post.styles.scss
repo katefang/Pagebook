@@ -7,12 +7,17 @@
       @include box-shadow;
       padding: 0.5rem 1rem;
     }
-    .comment {
+    .view-post-comment {
+      margin: 0 auto;
+      width: 95%;
       textarea {
         @include textarea;
+        margin: 1rem 0;
+        border-radius: 0.5rem;
       }
       button {
         @include button($pc, #fff);
+        width: 100%;
       }
     }
   }

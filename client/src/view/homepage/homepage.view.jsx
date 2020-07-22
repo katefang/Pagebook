@@ -5,7 +5,6 @@ import MakePost from '../../components/make-post/make-post.component';
 import { getPosts } from '../../services/posts';
 import FeedHeader from '../../components/feed-header/feed-header.component';
 import Feed from '../../components/feed/feed.component';
-import { AdminContext } from '../../context/admin-context';
 import UsersPane from '../../components/users-pane/users-pane.component';
 
 const Homepage = () => {
@@ -18,7 +17,6 @@ const Homepage = () => {
   const fetchPosts = async () => {
     const response = await getPosts();
     setPosts(response);
-    console.log(response);
   };
 
   return (

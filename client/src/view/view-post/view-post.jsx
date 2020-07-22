@@ -33,7 +33,7 @@ const ViewPost = () => {
             />
             <Feed postProp={post} />
           </div>
-          <div className='comment'>
+          <div className='view-post-comment'>
             <textarea placeholder='comment' />
             <button>Add Comment</button>
           </div>

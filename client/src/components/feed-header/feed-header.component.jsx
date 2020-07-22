@@ -14,10 +14,6 @@ const FeedHeader = ({ userID, time, post }) => {
   let user;
 
   useEffect(() => {
-    const findUsers = async () => {
-      const response = await getUsers();
-      setUsers(response);
-    };
     findUsers();
   }, []);
 
@@ -29,10 +25,14 @@ const FeedHeader = ({ userID, time, post }) => {
     setShow(!show);
   };
 
+  const findUsers = async () => {
+    const response = await getUsers();
+    setUsers(response);
+  };
+
   const handleDeletePost = async () => {
     await deletePost(post.id);
     toggleModal();
-    window.location.reload();
   };
 
   const timeString = new Date(time);
@@ -73,7 +73,7 @@ const FeedHeader = ({ userID, time, post }) => {
                   <TrashFill className='icon' /> <span> Delete</span>
                 </p>
                 <hr />
-                <p>
+                <p onClick={() => push(`/view-post/${post.id}`)}>
                   <EyeFill className='icon' /> <span> View</span>
                 </p>
               </div>
