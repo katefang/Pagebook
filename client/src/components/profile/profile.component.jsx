@@ -5,13 +5,15 @@ import Feed from '../feed/feed.component';
 import FeedHeader from '../feed-header/feed-header.component';
 import UsersPane from '../users-pane/users-pane.component';
 import { AdminContext } from '../../context/admin-context';
+import { useHistory } from 'react-router-dom';
 
 const Profile = ({ user, posts }) => {
   const { admin } = useContext(AdminContext);
+  const { push } = useHistory();
 
   return (
     <div className='profile'>
-      <div className='header' />
+      <div className='header' onClick={() => push('/home')} />
       {user && (
         <div className='bio'>
           <div className='profile-avatar'>

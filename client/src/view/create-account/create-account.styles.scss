@@ -2,9 +2,15 @@
 
 .create-account-view {
   margin: 0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   .content {
-    margin: 1rem auto;
+    width: 90%;
+    flex: auto;
+    margin: 0 auto;
+    padding: 2rem 0 1rem;
     text-align: center;
     @include flex(column, space-around, stretch);
 
@@ -12,13 +18,10 @@
       @include flex(column, center, stretch);
     }
     .gender {
-      @include flex(column, space-evenly, center);
+      margin: 0 auto;
+      width: 22%;
       label {
-        width: 15%;
         @include flex(row, space-between, center);
-        input {
-          width: 1rem;
-        }
       }
     }
     h3 {
@@ -32,7 +35,7 @@
       font-weight: 700;
       font-size: 1.2rem;
     }
-    input {
+    input:not([type='radio']) {
       @include input;
       width: 98%;
     }
@@ -42,9 +45,11 @@
     }
 
     .footer {
+      margin-top: auto;
       @include footer;
     }
-    @include width-tablet;
-    @include width-desktop;
+    @media screen and (min-width: $breakpoint-tablet) {
+      width: 50%;
+    }
   }
 }

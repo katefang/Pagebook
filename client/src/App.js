@@ -18,8 +18,15 @@ function App() {
   return (
     <div className='App'>
       <Switch>
-        <Route exact path='/' render={() => <LandingView />} />
-        <Route path='/create-account' render={() => <CreateAccountView />} />
+        <Route
+          exact
+          path='/'
+          render={() => (admin ? <Homepage /> : <LandingView />)}
+        />
+        <Route
+          path='/create-account'
+          render={() => (admin ? <Homepage /> : <CreateAccountView />)}
+        />
         <Route path='/login' render={() => <LoginView />} />
         <Route
           path='/home'

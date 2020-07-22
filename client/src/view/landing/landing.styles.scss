@@ -2,12 +2,12 @@
 
 .landing-view {
   background-color: #fff;
-  @include flex(column, center, space-between);
+  @include flex(column, space-between, normal);
   height: 100vh;
   text-align: center;
   .content {
     margin: 5rem auto 0;
-    @include flex(column, space-between, stretch);
+    @include flex(column, space-between, center);
     flex: auto;
     h2 {
       color: $pc;
@@ -17,7 +17,7 @@
       padding: 1rem 0;
     }
     .button {
-      width: 90%;
+      width: 95%;
       margin: 0 auto;
       button {
         margin-top: 1rem;
@@ -31,6 +31,7 @@
 
     .footer {
       @include footer;
+      padding-bottom: 1rem;
     }
   }
 }

@@ -1,10 +1,18 @@
 @import '../../variables.scss';
 
 .main-header {
+  position: sticky;
   background-color: #fff;
   display: flex;
+  top: 0;
   @include flex(row, space-between, center);
   padding: 1rem;
+  @media screen and(min-width: $breakpoint-tablet) {
+    padding: 2rem 4rem;
+  }
+  @media screen and(min-width: $breakpoint-desktop) {
+    padding: 3rem 7.8rem 2rem;
+  }
   a {
     text-decoration: none;
     color: $pc;

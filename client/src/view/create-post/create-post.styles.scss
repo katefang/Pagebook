@@ -21,6 +21,8 @@
   .button {
     width: 90%;
     margin: 0 auto;
+    @include width-tablet;
+    @include width-desktop;
     button {
       @include button($pc, #fff);
       width: 100%;
