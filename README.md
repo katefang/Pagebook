@@ -113,13 +113,30 @@ _**Fansbooke** will have_
 
 src
 |__ images
-|__ components/
-      |__ landing-page.jsx
-      |__ login-page.jsx
-      |__ create-account-page.jsx
-      |__ homepage.jsx
-      |__ profile-page.jsx
-      |__ header.jsx
+|__components/
+    |__avatar.component.jsx
+    |__feed.component.jsx
+    |__feed-header.component.jsx
+    |__feed.component.jsx
+    |__header.component.jsx
+    |__make-post.component.jsx
+    |__modal.component.jsx
+    |__profile.component.jsx
+    |__reply-box.component.jsx
+    |__show-comment.component.jsx
+    |__users-pane.component.jsx
+|__ views/
+    |__admin-profile.view.jsx
+    |__create-account.view.jsx
+    |__create-post.view.jsx
+    |__homepage.view.jsx
+    |__landing.view.jsx
+    |__login .view.jsx
+    |__update-post.view.jsx
+    |__user-profile.view.jsx
+    |__view-post.view.jsx
+|__context/
+    |__admin-context.jsx
 |__ services/
     |__ apiHelper.js
     |__ user.js
@@ -141,10 +158,10 @@ src
 
 | Task      | Priority | Estimated Time | Time Invested | Actual Time |
 | --------- | :------: | :------------: | :-----------: | :---------: |
-| CSS       |    H     |     20 hrs     |      TBH      |     TBH     |
-| Front End |    VH    |     30 hrs     |      TBH      |     TBH     |
-| Back End  |    H     |     15 hrs     |      TBH      |     TBD     |
-| TOTAL     |          |     60 hrs     |      TBH      |     TBD     |
+| CSS       |    H     |     20 hrs     |    20 hrs     |   20 hrs    |
+| Front End |    VH    |     30 hrs     |    30 hrs     |   30 hrs    |
+| Back End  |    H     |     15 hrs     |     5 hrs     |    5 hrs    |
+| TOTAL     |          |     65 hrs     |    55 hrs     |   55 hrs    |
 
 <br>
 
@@ -166,7 +183,42 @@ src
 
 ## Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
+```
+  const handleLike = async () => {
+    try {
+      const response = await createLike({
+        user_id: admin.id,
+        post_id: postProp.id
+      });
+      await fetchPost();
+      setLiked(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleDeleteLike = async id => {
+    try {
+      await deleteLike(id);
+      await fetchPost();
+      setLiked(null);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const toggleLike = () => {
+    if (liked) {
+      if (liked.user_id === admin.id) {
+        handleDeleteLike(liked.id);
+      } else {
+        handleLike();
+      }
+    } else {
+      handleLike();
+    }
+  };
+```
 
 ## Code Issues & Resolutions
 
