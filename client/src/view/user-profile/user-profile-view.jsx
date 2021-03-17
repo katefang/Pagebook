@@ -15,7 +15,7 @@ const UserProfileView = () => {
   useEffect(() => {
     fetchPosts();
     fetchUser();
-  }, [pathname]);
+  }, [pathname, id]);
 
   const fetchPosts = async () => {
     const response = await getPosts();

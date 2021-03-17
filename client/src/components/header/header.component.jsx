@@ -27,7 +27,7 @@ const Header = () => {
   return (
     <div className='main-header'>
       <Link to='/home'>
-        <h2>fansbook</h2>
+        <div className='logo'>P</div>
       </Link>
       <div className='icons'>
         <div className='person'>

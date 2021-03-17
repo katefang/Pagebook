@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import './profile.styles.scss';
+import Header from '../header/header.component';
 import MakePost from '../make-post/make-post.component';
 import Feed from '../feed/feed.component';
 import FeedHeader from '../feed-header/feed-header.component';
@@ -13,7 +14,8 @@ const Profile = ({ user, posts }) => {
 
   return (
     <div className='profile'>
-      <div className='header' onClick={() => push('/home')} />
+      <Header />
+      <div className='header' />
       {user && (
         <div className='bio'>
           <div className='profile-avatar'>

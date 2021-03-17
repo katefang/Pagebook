@@ -76,6 +76,7 @@ $breakpoint-desktop: 1024px;
     display: flex;
     justify-content: space-around;
     margin: 0 auto;
+    align-items: flex-end;
     .content {
       width: 100%;
       @media screen and(min-width: $breakpoint-tablet) {
@@ -88,7 +89,8 @@ $breakpoint-desktop: 1024px;
     }
     .side-pane {
       background-color: #fff;
-      @media screen and(max-width: 1000px) {
+      border-radius: 0.5rem;
+      @media screen and(max-width: 1024px) {
         display: none;
       }
     }

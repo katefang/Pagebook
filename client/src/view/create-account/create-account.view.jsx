@@ -14,7 +14,7 @@ const CreateAccountView = () => {
     gender: '',
     DOB: '',
     email: '',
-    password: ''
+    password: '',
   });
 
   const handleChange = e => {
@@ -114,7 +114,7 @@ const CreateAccountView = () => {
               type='radio'
               name='gender'
               value='idk'
-              checked={gender === 'not sure'}
+              checked={gender === 'neither'}
               onChange={handleChange}
             />
             not sure
