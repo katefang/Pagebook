@@ -22,14 +22,14 @@
         width: 100%;
       }
     }
-    @media screen and (min-width: $breakpoint-tablet) {
+    @media screen and (min-width: $tablet) {
       margin: 2rem auto;
       width: 80%;
       .view-post-comment {
         width: 100%;
       }
     }
-    @media screen and (min-width: $breakpoint-tablet) {
+    @media screen and (min-width: $tablet) {
       margin: 3rem auto;
       width: 75%;
       .view-post-comment {

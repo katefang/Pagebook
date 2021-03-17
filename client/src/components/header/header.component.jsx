@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import './header.styles.scss';
-import { PersonFill } from 'react-bootstrap-icons';
-import { Link, useHistory } from 'react-router-dom';
+import { HouseDoorFill, HouseDoor, PersonFill } from 'react-bootstrap-icons';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { AdminContext } from '../../context/admin-context';
 import Modal from '../modal/modal.component';
 
@@ -9,6 +9,7 @@ const Header = () => {
   const { admin, setAdmin } = useContext(AdminContext);
   const { push } = useHistory();
   const [show, setShow] = useState(false);
+  const location = useLocation();
 
   const toggleModal = () => {
     setShow(!show);
@@ -26,12 +27,23 @@ const Header = () => {
 
   return (
     <div className='main-header'>
-      <Link to='/home'>
-        <div className='logo'>P</div>
-      </Link>
-      <div className='icons'>
-        <div className='person'>
-          <PersonFill onClick={toggleModal} />
+      <div className='content'>
+        <Link to='/home'>
+          <div className='logo'>P</div>
+        </Link>
+        <Link to='/home'>
+          {location.pathname == '/home' ? (
+            <HouseDoorFill style={{ width: '1.8rem', height: '1.8rem' }} />
+          ) : (
+            <HouseDoor
+              style={{ width: '1.8rem', height: '1.8rem', color: '99adc1' }}
+            />
+          )}
+        </Link>
+        <div className='icons'>
+          <div className='person'>
+            <PersonFill onClick={toggleModal} />
+          </div>
         </div>
       </div>
       <Modal show={show} toggleModal={toggleModal}>

@@ -1,7 +1,9 @@
 $pc: #1877f2;
 $sc: #eef2f7;
-$breakpoint-tablet: 768px;
-$breakpoint-desktop: 1024px;
+$tablet: 480px;
+$big-tablet: 768px;
+$desktop: 1024px;
+$big-desktop: 1824px;
 
 @mixin flex($fd, $jc, $ai) {
   display: flex;
@@ -27,7 +29,7 @@ $breakpoint-desktop: 1024px;
   &::placeholder {
     padding-left: 2px;
   }
-  @media screen and(min-width: $breakpoint-tablet) {
+  @media screen and(min-width: $tablet) {
     height: 3rem;
     margin-top: 0.2rem;
   }
@@ -75,24 +77,40 @@ $breakpoint-desktop: 1024px;
   .desktop {
     display: flex;
     justify-content: space-around;
-    margin: 0 auto;
-    align-items: flex-end;
+    margin: 1rem auto;
+    align-items: flex-start;
+    width: 95%;
+
+    @media screen and(min-width: $tablet) {
+      width: 90%;
+    }
+    @media screen and(min-width: $big-tablet) {
+      width: 70%;
+    }
+    @media screen and(min-width: $desktop) {
+      width: 60%;
+    }
+
     .content {
       width: 100%;
-      @media screen and(min-width: $breakpoint-tablet) {
+      @media screen and(min-width: $tablet) {
         width: 80%;
       }
-      @media screen and(min-width: $breakpoint-desktop) {
+      @media screen and(min-width: $desktop) {
         margin: 0 0 0 1rem;
         width: 60%;
       }
     }
     .side-pane {
+      height: 90vh;
+      margin: 1rem 0 1rem 6rem;
       background-color: #fff;
       border-radius: 0.5rem;
-      @media screen and(max-width: 1024px) {
+
+      @media screen and(max-width: $big-tablet) {
         display: none;
       }
+      overflow-y: auto;
     }
   }
 }

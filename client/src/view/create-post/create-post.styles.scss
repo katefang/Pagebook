@@ -26,7 +26,7 @@
       width: 100%;
     }
   }
-  @media screen and(min-width: $breakpoint-tablet) {
+  @media screen and(min-width: $tablet) {
     .content {
       width: 80%;
       margin: 2rem auto;
@@ -42,7 +42,7 @@
       }
     }
   }
-  @media screen and(min-width: $breakpoint-desktop) {
+  @media screen and(min-width: $desktop) {
     .content {
       width: 75%;
     }

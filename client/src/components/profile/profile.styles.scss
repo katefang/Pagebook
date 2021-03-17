@@ -2,37 +2,30 @@
 
 .profile {
   height: 100vh;
+  width: 100%;
   .header {
     width: 100%;
     height: 20vh;
-    background-Color: $pc;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: $pc;
     background-size: cover;
-    @media screen and (min-width: $breakpoint-tablet) {
-      height: 25vh;
+    @media screen and (min-width: $tablet) {
+      height: 30vh;
+    }
+
+    @media screen and (min-width: $desktop) {
+      height: 40vh;
     }
   }
   .bio {
+    @include flex(column, center, center);
     .profile-avatar {
+      position: relative;
       width: 5rem;
       height: 5rem;
       border-radius: 50%;
       background-color: #fff;
       @include flex(row, center, center);
-      position: relative;
       bottom: 2rem;
-      left: 40vw;
-      @media screen and (min-width: $breakpoint-tablet) {
-        left: 44vw;
-      }
-
-      @media screen and (min-width: $breakpoint-desktop) {
-        left: 46vw;
-      }
-    }
-    p {
-      text-align: center;
     }
   }
 

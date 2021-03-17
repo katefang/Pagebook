@@ -7,11 +7,11 @@
     margin: 0;
     height: 20vh;
     width: 100%;
-    background-color: $pc; 
+    background-color: $pc;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    @media screen and (min-width: $breakpoint-tablet) {
+    @media screen and (min-width: $tablet) {
       height: 25vh;
     }
   }
@@ -48,7 +48,7 @@
         margin-top: 10px;
       }
     }
-    @media screen and (min-width: $breakpoint-tablet) {
+    @media screen and (min-width: $tablet) {
       width: 50%;
     }
   }

@@ -6,7 +6,7 @@
     .make-a-post {
       @include box-shadow;
       padding: 1rem;
-      @media screen and (min-width: $breakpoint-tablet) {
+      @media screen and (min-width: $tablet) {
         margin-top: 1rem;
       }
     }
@@ -16,7 +16,7 @@
       @include box-shadow;
     }
 
-    @media screen and(min-width: $breakpoint-desktop) {
+    @media screen and(min-width: $desktop) {
       margin: 0 0 0 1rem;
     }
   }

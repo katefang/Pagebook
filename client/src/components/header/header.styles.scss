@@ -3,15 +3,14 @@
 .main-header {
   position: sticky;
   background-color: #fff;
-  display: flex;
   top: 0;
-  @include flex(row, space-between, center);
-  @media screen and(min-width: $breakpoint-tablet) {
-    padding: 0.5rem 2rem;
+  .content {
+    text-align: center;
+    margin: 0 auto;
+    padding: 0.5rem;
+    @include flex(row, space-between, center);
   }
   a {
-    text-decoration: none;
-    color: $pc;
     .logo {
       width: 2rem;
       height: 2rem;
@@ -24,6 +23,7 @@
       @include flex(row, center, center);
     }
   }
+
   .icons {
     @include flex(row, space-evenly, center);
     .search,

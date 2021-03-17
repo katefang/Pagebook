@@ -48,7 +48,7 @@
       margin-top: auto;
       @include footer;
     }
-    @media screen and (min-width: $breakpoint-tablet) {
+    @media screen and (min-width: $tablet) {
       width: 50%;
     }
   }
