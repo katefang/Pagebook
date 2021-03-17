@@ -36,7 +36,6 @@ const CreateAccountView = () => {
   const { first_name, last_name, DOB, gender, email, password } = input;
   return (
     <div className='create-account-view'>
-      <Header />
       <div className='content'>
         <h3 className='title'>Create a New Account</h3>
         <h6 className='subtitle'>It's quick and easy.</h6>
