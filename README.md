@@ -1,4 +1,4 @@
-# Fansbook
+# Pagebook
 
 - [Overview](#overview)
 - [MVP](#mvp)
@@ -20,13 +20,13 @@
 
 ## Overview
 
-_**Fansbook** is a attempted replica of Facebook with basic functionalities_
+_**Pagebook** is a attempted replica of Facebook with basic functionalities_
 
 <br>
 
 ## MVP
 
-_**Fansbooke** will have_
+_**Pagebook** will have_
 
 - Posts CRUD
 - User Sign Up and Sign In functionalities
@@ -171,55 +171,3 @@ src
 
 ![](assets/fansbook-ERD.png)
 
-<br>
-
----
-
-## Post-MVP
-
-- have friends
-
----
-
-## Code Showcase
-
-```
-  const handleLike = async () => {
-    try {
-      const response = await createLike({
-        user_id: admin.id,
-        post_id: postProp.id
-      });
-      await fetchPost();
-      setLiked(response);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handleDeleteLike = async id => {
-    try {
-      await deleteLike(id);
-      await fetchPost();
-      setLiked(null);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const toggleLike = () => {
-    if (liked) {
-      if (liked.user_id === admin.id) {
-        handleDeleteLike(liked.id);
-      } else {
-        handleLike();
-      }
-    } else {
-      handleLike();
-    }
-  };
-```
-
-## Code Issues & Resolutions
-
-> Use this section to list of all major issues encountered and their resolution.
