@@ -5,7 +5,9 @@ const ReplyBox = ({ comment }) => {
   const createdTime = new Date(comment.created_at);
   const currentTime = new Date();
 
-  let years = Math.floor(currentTime.getFullYear() - createdTime.getFullYear());
+  let years = Math.floor(
+    (currentTime.getMonth() - createdTime.getMonth()) / 12
+  );
   let months = Math.floor(currentTime.getMonth() - createdTime.getMonth());
   let days = Math.floor(
     (currentTime.getTime() - createdTime.getTime()) / 1000 / 60 / 60 / 24
@@ -19,6 +21,7 @@ const ReplyBox = ({ comment }) => {
   // let daysDifference = Math.floor(difference / 1000 / 60 / 60 / 24);
   // let hoursDifference = Math.floor(difference / 1000 / 60 / 60);
   // let minutesDifference = Math.floor(difference / 1000 / 60);
+  console.log(years);
 
   let time;
   if (years > 0) {
