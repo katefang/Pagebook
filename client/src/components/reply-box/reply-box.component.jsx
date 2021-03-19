@@ -5,23 +5,38 @@ const ReplyBox = ({ comment }) => {
   const createdTime = new Date(comment.created_at);
   const currentTime = new Date();
 
-  let difference = currentTime.getTime() - createdTime.getTime();
+  let years = Math.floor(currentTime.getFullYear() - createdTime.getFullYear());
+  let months = Math.floor(currentTime.getMonth() - createdTime.getMonth());
+  let days = Math.floor(
+    (currentTime.getTime() - createdTime.getTime()) / 1000 / 60 / 60 / 24
+  );
+  let hours = Math.floor(currentTime.getHours() - createdTime.getHours());
+  let minutes = Math.floor(currentTime.getMinutes() - createdTime.getMinutes());
 
-  let daysDifference = Math.floor(difference / 1000 / 60 / 60 / 24);
-  let hoursDifference = Math.floor(difference / 1000 / 60 / 60);
-  let minutesDifference = Math.floor(difference / 1000 / 60);
+  // let difference = currentTime.getTime() - createdTime.getTime();
+
+  // let monthsDifference = Math.floor(difference / 1000 / 60 / 60 / 24 /30)
+  // let daysDifference = Math.floor(difference / 1000 / 60 / 60 / 24);
+  // let hoursDifference = Math.floor(difference / 1000 / 60 / 60);
+  // let minutesDifference = Math.floor(difference / 1000 / 60);
 
   let time;
-  if (daysDifference > 0) {
-    time = daysDifference + 'd';
-  } else if (hoursDifference > 0 && daysDifference <= 0) {
-    time = hoursDifference + 'h';
+  if (years > 0) {
+    time = years + 'y';
+  } else if (months > 0 && years <= 0) {
+    time = months + 'm';
+  } else if (days > 0 && months <= 0 && years <= 0) {
+    time = days + 'd';
+  } else if (hours > 0 && days <= 0 && months <= 0 && years <= 0) {
+    time = hours + 'h';
   } else if (
-    minutesDifference > 0 &&
-    hoursDifference <= 0 &&
-    daysDifference <= 0
+    minutes > 0 &&
+    hours <= 0 &&
+    days <= 0 &&
+    months <= 0 &&
+    years <= 0
   ) {
-    time = minutesDifference + 'm';
+    time = minutes + 'm';
   }
 
   return (
